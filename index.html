@@ -75,14 +75,14 @@
                             (function (index) {
                                 setTimeout(function () {
                                     var jutestring = "http://www.diegilde2-browsergame.de/scripts/foundItem.php?i=" + index;
-                                    $("#jutebeuteldiv").html('<object data=' + jutestring + ' />');
-                                    $("#jutebeutelcounterdiv").text(jutestring);
+                                    $("#response").html('<object data=' + jutestring + ' />');
+                                    $("#responselink").text(jutestring);
                                 }, i * 1000);
                             })(i);
                         }
                         setTimeout(function () {
-                            $("#jutebeuteldiv").text("Alle abgefarmt!");
-                            $("#jutebeutelcounterdiv").text("");
+                            $("#response").text("Alle abgefarmt!");
+                            $("#responselink").text("");
                         }, 27000);
                     });
                 });
@@ -93,21 +93,25 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $("#epitems").click(function () {
-                        $.ajax({
-                            type: "GET",
-                            url: "http://www.diegilde2-browsergame.de/scripts/buyItem.php?item=129&target=CHILD&iv=1",
-                            data: {
-                                "target": "CHILD",
-                                "iv": 1
-                            },
-                            success: function (data) {
-                                $("#jutebeuteldiv").html(data);
-                            },
-                            always: function (data) {
-                                $("#jutebeuteldiv").html(data);
-                            },
-                            dataType: "json"
-                        });
+                        var i = 1;
+
+                        var ids = [23, 27, 45, 47, 82, 67, 101, 106, 135, 133, 132, 126, 129, 127, 48, 168, 167, 390];
+
+                        function myLoop() {
+                            setTimeout(function () {
+
+                                var linkstring = "http://www.diegilde2-browsergame.de/scripts/buyItem.php?item=" + ids[i] + "&target=CHILD&iv=1";
+                                $("#response").html('<object data=' + linkstring + ' />');
+                                $("#responselink").text(linkstring);
+
+                                i++;
+                                if (i < ids.length) {
+                                    myLoop();
+                                }
+                            }, 1000)
+                        }
+
+                        myLoop();
                     });
                 });
             </script>
@@ -115,7 +119,10 @@
     </div>
 
     <div class="col-9">
-        <div class="container">
+        <div class="container" id="response">
+            TEST
+        </div>
+        <div class="container" id="responselink">
             TEST
         </div>
     </div>
