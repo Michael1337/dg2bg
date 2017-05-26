@@ -35,20 +35,15 @@
             <a href="http://www.diegilde2-browsergame.de/measure.php?ms=Quacksalver">Quacksalben</a><br/>
 
 
-            <a href="http://www.diegilde2-browsergame.de/measure.php?ms=TakeABath">In den Zuber steigen</a><br/>
-            <a href="http://www.diegilde2-browsergame.de/scripts/doTakeABath.php?tar=MAIN">In den Zuber steigen
-                (MAIN)</a><br/>
-            <a href="http://www.diegilde2-browsergame.de/scripts/doTakeABath.php?tar=COURT">In den Zuber steigen
-                (COURT)</a><br/>
-            <a href="http://www.diegilde2-browsergame.de/scripts/doTakeABath.php?tar=CHILD">In den Zuber steigen
-                (CHILD)</a><br/>
             <button id='zuber'>Zuber</button>
             <br>
             <script type="text/javascript">
                 $(document).ready(function () {
                     $("#zuber").click(function () {
-                        var jutestring = "http://www.diegilde2-browsergame.de/measure.php?ms=TakeABath";
-                        $("#response").html('<object data=' + jutestring + ' />');
+                        var zuberstring = "http://www.diegilde2-browsergame.de/measure.php?ms=TakeABath";
+                        $("#responselink").html('In den Zuber steigen');
+                        $("#response").html('<object data=' + zuberstring + ' />');
+                        $("#action").html('');
                     });
                 });
             </script>
