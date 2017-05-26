@@ -36,9 +36,22 @@
 
 
             <a href="http://www.diegilde2-browsergame.de/measure.php?ms=TakeABath">In den Zuber steigen</a><br/>
-            <a href="http://www.diegilde2-browsergame.de/scripts/doTakeABath.php?tar=MAIN">In den Zuber steigen (MAIN)</a><br/>
-            <a href="http://www.diegilde2-browsergame.de/scripts/doTakeABath.php?tar=COURT">In den Zuber steigen (COURT)</a><br/>
-            <a href="http://www.diegilde2-browsergame.de/scripts/doTakeABath.php?tar=CHILD">In den Zuber steigen (CHILD)</a><br/>
+            <a href="http://www.diegilde2-browsergame.de/scripts/doTakeABath.php?tar=MAIN">In den Zuber steigen
+                (MAIN)</a><br/>
+            <a href="http://www.diegilde2-browsergame.de/scripts/doTakeABath.php?tar=COURT">In den Zuber steigen
+                (COURT)</a><br/>
+            <a href="http://www.diegilde2-browsergame.de/scripts/doTakeABath.php?tar=CHILD">In den Zuber steigen
+                (CHILD)</a><br/>
+            <button id='zuber'>Zuber</button>
+            <br>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $("#zuber").click(function () {
+                        var jutestring = "http://www.diegilde2-browsergame.de/measure.php?ms=TakeABath";
+                        $("#response").html('<object data=' + jutestring + ' />');
+                    });
+                });
+            </script>
 
 
             <a href="http://www.diegilde2-browsergame.de/building.php?m=2&bp=bp1">Gebäude reparieren?</a><br/>
@@ -68,32 +81,33 @@
             </script>
 
 
-            <button id='jutebeutelbutton'>Jutebeutel abfarmen</button><br>
+            <button id='jutebeutelbutton'>Jutebeutel abfarmen</button>
+            <br>
             <script type="text/javascript">
                 $(document).ready(function () {
                     $("#jutebeutelbutton").click(function () {
-                      $("#responselink").text("Jutebeutel-Fram gestartet!");
+                        $("#responselink").text("Jutebeutel-Fram gestartet!");
                         myLoop();
                     });
                 });
 
                 var i = 1;
 
-                function myLoop () {
-                   setTimeout(function () {
+                function myLoop() {
+                    setTimeout(function () {
 
-                      var jutestring = "http://www.diegilde2-browsergame.de/scripts/foundItem.php?i=" + i;
-                      $("#response").html('<object data=' + jutestring + ' />');
-                      $("#responselink").text("Jutebeutel Nummer: " + i);
+                        var jutestring = "http://www.diegilde2-browsergame.de/scripts/foundItem.php?i=" + i;
+                        $("#response").html('<object data=' + jutestring + ' />');
+                        $("#responselink").text("Jutebeutel Nummer: " + i);
 
-                      i++;
-                      if (i < 26) {
-                         myLoop();
-                      }else{
-                        $("#response").text("Alle abgefarmt!");
-                        $("#responselink").text("");
-                      }
-                   }, 2000)
+                        i++;
+                        if (i < 26) {
+                            myLoop();
+                        } else {
+                            $("#response").text("Alle abgefarmt!");
+                            $("#responselink").text("");
+                        }
+                    }, 2000)
                 }
 
 
