@@ -1,109 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Gilde 2 - Tool</title>
+
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-grid.css">
     <link rel="stylesheet" href="css/bootstrap-reboot.css">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <div class="row">
     <div class="col-3">
-        <a href="http://www.diegilde2-browsergame.de/measure.php?ms=Prey">Predigt abhalten</a><br/>
-        <a href="http://www.diegilde2-browsergame.de/measure.php?ms=ChangeFaith">Glaubenswechsel</a><br/>
-        <a href="http://www.diegilde2-browsergame.de/measure.php?ms=WinBeliver">Gläubige gewinnen</a><br/>
-    </div>
-    <div class="col-3">
-        <a href="http://www.diegilde2-browsergame.de/measure.php?ms=Train">Gruppenmitglied trainieren</a><br/>
-        <a href="http://www.diegilde2-browsergame.de/measure.php?ms=Spy">Jemanden ausspionieren...</a><br/>
-        <a href="http://www.diegilde2-browsergame.de/measure.php?ms=OrderCollectEvidence">Sich umhören</a><br/>
-        <a href="http://www.diegilde2-browsergame.de/scripts/doOrderCollectEvidence.php">Sich umhören</a><br/>
-        <a href="http://www.diegilde2-browsergame.de/quests.php?ms=7">Warenschmuggel</a>
-    </div>
-    <div class="col-3">
-        <a href="http://www.diegilde2-browsergame.de/measure.php?ms=Quacksalver">Quacksalben</a><br/>
-    </div>
-    <div class="col-3">
-        <a href="http://www.diegilde2-browsergame.de/measure.php?ms=TakeABath">In den Zuber steigen</a><br/>
-    </div>
-    <div class="col-3">
-        <a href="http://www.diegilde2-browsergame.de/building.php?m=2&bp=bp1">Gebäude reparieren?</a><br/>
-    </div>
-    <div class="col-3">
-        <a href="http://www.diegilde2-browsergame.de/scripts/doSpy.php?tar=0">Spion aussenden</a><br/>
-    </div>
-    <div class="col-3">
-        <a href="http://www.diegilde2-browsergame.de/scripts/msPlayTheGame.php?step=6&startgold=15470&roundgold=15395&r1me=3&r2me=4&r3me=2&r4me=1&r5me=3&r1ai=1&r2ai=1&r3ai=1&r4ai=1&r5ai=0&mefinal=1&aifinal=1">Beim
-            Würfelspiel betrügen</a><br/>
-        http://www.diegilde2-browsergame.de/assets/css/dicegame.css?v=1495756510
-    </div>
-    <div class="col-3">
-        <input class="startbutton moveitem" type="button" id="change369" value="Schmuggelversuch unternehmen"
-               onclick="moveItem369();"><br/>
-        <script type="text/javascript">
-            function moveItem369() {
-                $.ajax({
-                    type: "GET",
-                    url: "./scripts/doSmuggel.php?item=369&id=225&chance=100",
-                    data: {"iv": document.getElementById("itemvalue369").value},
-                    success: function (data) {
-                        $("#errorbox2225").html(data);
-                    }
-                });
-            }
-        </script>
-    </div>
+        <div class="container">
 
-    <div class="col-3">
-        <button id='jutebeutelbutton'>Jutebeutel abfarmen</button>
-        <div id='jutebeutelcounterdiv'></div>
-        <div id='jutebeuteldiv'></div>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $("#jutebeutelbutton").click(function () {
-                    for (var i = 1; i <= 26; i++) {
-                        (function (index) {
-                            setTimeout(function () {
-                                var jutestring = "http://www.diegilde2-browsergame.de/scripts/foundItem.php?i=" + index;
-                                $("#jutebeuteldiv").html('<object data=' + jutestring + ' />');
-                                $("#jutebeutelcounterdiv").text(jutestring);
-                            }, i * 1000);
-                        })(i);
-                    }
-                    setTimeout(function () {
-                        $("#jutebeuteldiv").text("Alle abgefarmt!");
-                        $("#jutebeutelcounterdiv").text("");
-                    }, 27000);
-                });
-            });
-        </script>
+            <a href="http://www.diegilde2-browsergame.de/measure.php?ms=Prey">Predigt abhalten</a><br/>
+            <a href="http://www.diegilde2-browsergame.de/measure.php?ms=ChangeFaith">Glaubenswechsel</a><br/>
+            <a href="http://www.diegilde2-browsergame.de/measure.php?ms=WinBeliver">Gläubige gewinnen</a><br/>
 
-        <button id='epitems'>EP-Items kaufen</button>
 
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $("#epitems").click(function () {
+            <a href="http://www.diegilde2-browsergame.de/measure.php?ms=Train">Gruppenmitglied trainieren</a><br/>
+            <a href="http://www.diegilde2-browsergame.de/measure.php?ms=Spy">Jemanden ausspionieren...</a><br/>
+            <a href="http://www.diegilde2-browsergame.de/measure.php?ms=OrderCollectEvidence">Sich umhören</a><br/>
+            <a href="http://www.diegilde2-browsergame.de/scripts/doOrderCollectEvidence.php">Sich umhören</a><br/>
+            <a href="http://www.diegilde2-browsergame.de/quests.php?ms=7">Warenschmuggel</a>
+
+
+            <a href="http://www.diegilde2-browsergame.de/measure.php?ms=Quacksalver">Quacksalben</a><br/>
+
+
+            <a href="http://www.diegilde2-browsergame.de/measure.php?ms=TakeABath">In den Zuber steigen</a><br/>
+
+
+            <a href="http://www.diegilde2-browsergame.de/building.php?m=2&bp=bp1">Gebäude reparieren?</a><br/>
+
+
+            <a href="http://www.diegilde2-browsergame.de/scripts/doSpy.php?tar=0">Spion aussenden</a><br/>
+
+
+            <a href="http://www.diegilde2-browsergame.de/scripts/msPlayTheGame.php?step=6&startgold=15470&roundgold=15395&r1me=3&r2me=4&r3me=2&r4me=1&r5me=3&r1ai=1&r2ai=1&r3ai=1&r4ai=1&r5ai=0&mefinal=1&aifinal=1">Beim
+                Würfelspiel betrügen</a><br/>
+            http://www.diegilde2-browsergame.de/assets/css/dicegame.css?v=1495756510
+
+
+            <input class="startbutton moveitem" type="button" id="change369" value="Schmuggelversuch unternehmen"
+                   onclick="moveItem369();"><br/>
+            <script type="text/javascript">
+                function moveItem369() {
                     $.ajax({
                         type: "GET",
-                        url: "http://www.diegilde2-browsergame.de/scripts/buyItem.php?item=129&target=CHILD&iv=1",
-                        data: {
-                            "target": "CHILD",
-                            "iv": 1
-                        },
+                        url: "./scripts/doSmuggel.php?item=369&id=225&chance=100",
+                        data: {"iv": document.getElementById("itemvalue369").value},
                         success: function (data) {
-                            $("#jutebeuteldiv").html(data);
-                        },
-                        always: function (data) {
-                            $("#jutebeuteldiv").html(data);
-                        },
-                        dataType: "json"
+                            $("#errorbox2225").html(data);
+                        }
+                    });
+                }
+            </script>
+
+
+            <button id='jutebeutelbutton'>Jutebeutel abfarmen</button>
+            <div id='jutebeutelcounterdiv'></div>
+            <div id='jutebeuteldiv'></div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $("#jutebeutelbutton").click(function () {
+                        for (var i = 1; i <= 26; i++) {
+                            (function (index) {
+                                setTimeout(function () {
+                                    var jutestring = "http://www.diegilde2-browsergame.de/scripts/foundItem.php?i=" + index;
+                                    $("#jutebeuteldiv").html('<object data=' + jutestring + ' />');
+                                    $("#jutebeutelcounterdiv").text(jutestring);
+                                }, i * 1000);
+                            })(i);
+                        }
+                        setTimeout(function () {
+                            $("#jutebeuteldiv").text("Alle abgefarmt!");
+                            $("#jutebeutelcounterdiv").text("");
+                        }, 27000);
                     });
                 });
-            });
-        </script>
+            </script>
+
+            <button id='epitems'>EP-Items kaufen</button>
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $("#epitems").click(function () {
+                        $.ajax({
+                            type: "GET",
+                            url: "http://www.diegilde2-browsergame.de/scripts/buyItem.php?item=129&target=CHILD&iv=1",
+                            data: {
+                                "target": "CHILD",
+                                "iv": 1
+                            },
+                            success: function (data) {
+                                $("#jutebeuteldiv").html(data);
+                            },
+                            always: function (data) {
+                                $("#jutebeuteldiv").html(data);
+                            },
+                            dataType: "json"
+                        });
+                    });
+                });
+            </script>
+        </div>
+    </div>
+
+    <div class="col-9">
+        <div class="container">
+            TEST
+        </div>
     </div>
 </div>
 </body>
