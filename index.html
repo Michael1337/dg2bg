@@ -127,13 +127,13 @@
                 $(document).ready(function () {
                     $("#jutebeutelbutton").click(function () {
                         $("#responselink").text("Jutebeutel-Fram gestartet!");
-                        myLoop();
+                        juteLoop();
                     });
                 });
 
                 var i = 1;
 
-                function myLoop() {
+                function juteLoop() {
                     setTimeout(function () {
 
                         var link = "http://www.diegilde2-browsergame.de/scripts/foundItem.php?i=" + i;
@@ -141,16 +141,14 @@
                         $("#responselink").text("Jutebeutel Nummer: " + i);
 
                         i++;
-                        if (i < 26) {
-                            myLoop();
+                        if (i <= 26) {
+                            juteLoop();
                         } else {
                             $("#response").text("Alle abgefarmt!");
                             $("#responselink").text("");
                         }
-                    }, 2000)
+                    }, 800)
                 }
-
-
             </script>
 
 
@@ -159,12 +157,12 @@
                 $(document).ready(function () {
                     $("#quests").click(function () {
                         $("#responselink").text("Quest-Annahme gestartet!");
-                        myLoop();
+                        quest1Loop();
                     });
                 });
 
                 var i = 1;
-                function myLoop() {
+                function quest1Loop() {
                     setTimeout(function () {
 
                         var link = "http://www.diegilde2-browsergame.de/scripts/doQuest.php?m=1&qid=" + i;
@@ -173,7 +171,7 @@
 
                         i++;
                         if (i <= 26) {
-                            myLoop();
+                            quest1Loop();
                         } else {
                             $("#response").text("Alle angenommen!");
                             $("#responselink").text("");
@@ -188,13 +186,13 @@
                 $(document).ready(function () {
                     $("#quests2").click(function () {
                         $("#responselink").text("Quest-Erfüllung gestartet!");
-                        myLoop();
+                        quest2Loop();
                     });
                 });
 
                 var i = 1;
                 var j = 1;
-                function myLoop() {
+                function quest2Loop() {
                     setTimeout(function () {
 
                         var link = "http://www.diegilde2-browsergame.de/scripts/doQuestitem.php?qp=" + i + "&q=" + j;
@@ -208,7 +206,7 @@
                             j++;
                         }
                         if (i <= 26) {
-                            myLoop();
+                            quest2Loop();
                         } else {
                             $("#response").text("Alle erfüllt!");
                             $("#responselink").text("");
