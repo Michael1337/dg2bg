@@ -60,9 +60,19 @@
             <a href="http://www.diegilde2-browsergame.de/scripts/doSpy.php?tar=0">Spion aussenden</a><br/>
 
 
-            <a href="http://www.diegilde2-browsergame.de/scripts/msPlayTheGame.php?step=6&startgold=794868&roundgold=48737&r1me=3&r2me=4&r3me=6&r4me=2&r5me=3&r1ai=3&r2ai=6&r3ai=1&r4ai=1&r5ai=5&mefinal=1&aifinal=1">Beim
-                Würfelspiel betrügen</a><br/>
-            http://www.diegilde2-browsergame.de/assets/css/dicegame.css?v=1495756510
+            <button id='dicegameButton'>Beim Würfelspiel betrügen</button><br>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $("#dicegameButton").click(function () {
+
+                      var dicestring = "http://www.diegilde2-browsergame.de/measure.php?ms=PlayTheGame";
+
+                      $("#responselink").text("Beim Würfelspiel betrügen!");
+                      $("#response").html('<object data=' + dicestring + ' />');
+                      $("#action").html('<a href="http://www.diegilde2-browsergame.de/scripts/msPlayTheGame.php?step=6&startgold=794868&roundgold=48737&r1me=3&r2me=4&r3me=6&r4me=2&r5me=3&r1ai=3&r2ai=6&r3ai=1&r4ai=1&r5ai=5&mefinal=1&aifinal=1">Betrug starten</a><br/> http://www.diegilde2-browsergame.de/assets/css/dicegame.css?v=1495756510');
+                    });
+                });
+            </script>
 
 
             <input class="startbutton moveitem" type="button" id="change369" value="Schmuggelversuch unternehmen"
@@ -171,6 +181,7 @@
 
             <div id='responselink'></div>
             <div id='response'></div>
+            <div id='action'></div>
         </div>
     </div>
 </div>
