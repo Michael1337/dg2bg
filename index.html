@@ -112,6 +112,39 @@
 
             </script>
 
+
+            <button id='quests'>Quests annehmen</button>
+            <br>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $("#quests").click(function () {
+                        $("#responselink").text("Quest-Annahme gestartet!");
+                        myLoop();
+                    });
+                });
+
+                var i = 1;
+
+                function myLoop() {
+                    setTimeout(function () {
+
+                        var queststring = "http://www.diegilde2-browsergame.de/scripts/doQuest.php?m=1&qid=" + i;
+                        $("#response").html('<object data=' + queststring + ' />');
+                        $("#responselink").text("Quest Nummer: " + i);
+
+                        i++;
+                        if (i < 26) {
+                            myLoop();
+                        } else {
+                            $("#response").text("Alle angenommen!");
+                            $("#responselink").text("");
+                        }
+                    }, 500)
+                }
+
+
+            </script>
+
             <button id='epitems'>EP-Items kaufen</button>
             <button id='epitems2'>EP-Items kaufen</button>
 
