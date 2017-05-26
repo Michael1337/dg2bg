@@ -20,27 +20,68 @@
     <div class="col-3">
         <div class="container">
 
-            <a href="http://www.diegilde2-browsergame.de/measure.php?ms=Prey">Predigt abhalten</a><br/>
             <a href="http://www.diegilde2-browsergame.de/measure.php?ms=ChangeFaith">Glaubenswechsel</a><br/>
-            <a href="http://www.diegilde2-browsergame.de/measure.php?ms=WinBeliver">Gläubige gewinnen</a><br/>
 
-
-            <a href="http://www.diegilde2-browsergame.de/measure.php?ms=Train">Gruppenmitglied trainieren</a><br/>
             <a href="http://www.diegilde2-browsergame.de/measure.php?ms=Spy">Jemanden ausspionieren...</a><br/>
-            <a href="http://www.diegilde2-browsergame.de/measure.php?ms=OrderCollectEvidence">Sich umhören</a><br/>
-            <a href="http://www.diegilde2-browsergame.de/scripts/doOrderCollectEvidence.php">Sich umhören</a><br/>
-            <a href="http://www.diegilde2-browsergame.de/quests.php?ms=7">Warenschmuggel</a>
+            <a href="http://www.diegilde2-browsergame.de/quests.php?ms=7">Warenschmuggel</a><br/>
 
 
-            <a href="http://www.diegilde2-browsergame.de/measure.php?ms=Quacksalver">Quacksalben</a><br/>
+            <img src="./images/winbeliver.png" onclick="showWinBeliver()"/><br>
+            <script type="text/javascript">
+                function showWinBeliver() {
+                    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=WinBeliver";
+                    $("#responselink").html('Gläubige gewinnen');
+                    $("#response").html('<object data=' + link + ' />');
+                    $("#action").html('');
+                }
+            </script>
 
+            <img src="./images/prey.png" onclick="showPrey()"/><br>
+            <script type="text/javascript">
+                function showPrey() {
+                    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=Prey";
+                    $("#responselink").html('Predigt abhalten');
+                    $("#response").html('<object data=' + link + ' />');
+                    $("#action").html('');
+                }
+            </script>
+
+            <img src="./images/train.png" onclick="showTrain()"/><br>
+            <script type="text/javascript">
+                function showTrain() {
+                    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=Train";
+                    $("#responselink").html('Gruppenmitglied trainieren');
+                    $("#response").html('<object data=' + link + ' />');
+                    $("#action").html('');
+                }
+            </script>
+
+            <img src="./images/OrderCollectEvidence.png" onclick="showOrderCollectEvidence()"/><br>
+            <script type="text/javascript">
+                function showOrderCollectEvidence() {
+                    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=OrderCollectEvidence";
+                    $("#responselink").html('Sich umhören');
+                    $("#response").html('<object data=' + link + ' />');
+                    $("#action").html('');
+                }
+            </script>
+
+            <img src="./images/Quacksalver.png" onclick="showQuack()"/><br>
+            <script type="text/javascript">
+                function showQuack() {
+                    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=Quacksalver";
+                    $("#responselink").html('Quacksalben');
+                    $("#response").html('<object data=' + link + ' />');
+                    $("#action").html('');
+                }
+            </script>
 
             <img src="./images/takeabath.png" onclick="showZuber()"/><br>
             <script type="text/javascript">
                 function showZuber() {
-                    var zuberstring = "http://www.diegilde2-browsergame.de/measure.php?ms=TakeABath";
+                    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=TakeABath";
                     $("#responselink").html('In den Zuber steigen');
-                    $("#response").html('<object data=' + zuberstring + ' />');
+                    $("#response").html('<object data=' + link + ' />');
                     $("#action").html('');
                 }
             </script>
@@ -55,10 +96,10 @@
             <img src="./images/playagame.png" onclick="showDicegame()"/><br>
             <script type="text/javascript">
                 function showDicegame() {
-                    var dicestring = "http://www.diegilde2-browsergame.de/measure.php?ms=PlayTheGame";
+                    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=PlayTheGame";
 
                     $("#responselink").text("Beim Würfelspiel betrügen!");
-                    $("#response").html('<object data=' + dicestring + ' />');
+                    $("#response").html('<object data=' + link + ' />');
                     $("#action").html('<a href="http://www.diegilde2-browsergame.de/scripts/msPlayTheGame.php?step=6&startgold=794868&roundgold=48737&r1me=3&r2me=4&r3me=6&r4me=2&r5me=3&r1ai=3&r2ai=6&r3ai=1&r4ai=1&r5ai=5&mefinal=1&aifinal=1">Betrug starten</a><br/> http://www.diegilde2-browsergame.de/assets/css/dicegame.css?v=1495756510');
                 }
             </script>
@@ -95,8 +136,8 @@
                 function myLoop() {
                     setTimeout(function () {
 
-                        var jutestring = "http://www.diegilde2-browsergame.de/scripts/foundItem.php?i=" + i;
-                        $("#response").html('<object data=' + jutestring + ' />');
+                        var link = "http://www.diegilde2-browsergame.de/scripts/foundItem.php?i=" + i;
+                        $("#response").html('<object data=' + link + ' />');
                         $("#responselink").text("Jutebeutel Nummer: " + i);
 
                         i++;
@@ -114,7 +155,6 @@
 
 
             <button id='quests'>Quests annehmen</button>
-            <br>
             <script type="text/javascript">
                 $(document).ready(function () {
                     $("#quests").click(function () {
@@ -127,8 +167,8 @@
                 function myLoop() {
                     setTimeout(function () {
 
-                        var queststring = "http://www.diegilde2-browsergame.de/scripts/doQuest.php?m=1&qid=" + i;
-                        $("#response").html('<object data=' + queststring + ' />');
+                        var link = "http://www.diegilde2-browsergame.de/scripts/doQuest.php?m=1&qid=" + i;
+                        $("#response").html('<object data=' + link + ' />');
                         $("#responselink").text("Quest Nummer: " + i);
 
                         i++;
@@ -157,8 +197,8 @@
                 function myLoop() {
                     setTimeout(function () {
 
-                        var queststring = "http://www.diegilde2-browsergame.de/scripts/doQuestitem.php?qp=" + i + "&q=" + j;
-                        $("#response").html('<object data=' + queststring + ' />');
+                        var link = "http://www.diegilde2-browsergame.de/scripts/doQuestitem.php?qp=" + i + "&q=" + j;
+                        $("#response").html('<object data=' + link + ' />');
                         $("#responselink").text("Quest Nummer: " + "qp=" + i + "&q=" + j);
 
                         if (j >= 3) {
@@ -190,9 +230,9 @@
                         function myLoop() {
                             setTimeout(function () {
 
-                                var linkstring = "http://www.diegilde2-browsergame.de/scripts/buyItem.php?item=" + ids[i] + "&target=CHILD&iv=1";
-                                $("#response").html('<object data=' + linkstring + ' />');
-                                $("#responselink").text(linkstring);
+                                var link = "http://www.diegilde2-browsergame.de/scripts/buyItem.php?item=" + ids[i] + "&target=CHILD&iv=1";
+                                $("#response").html('<object data=' + link + ' />');
+                                $("#responselink").text(link);
 
                                 i++;
                                 if (i < ids.length) {
@@ -211,9 +251,9 @@
                         function myLoop() {
                             setTimeout(function () {
 
-                                var linkstring = "http://www.diegilde2-browsergame.de/scripts/buyItem.php?item=" + ids[i] + "&target=CHILD&iv=1";
-                                $("#response").html('<object data=' + linkstring + ' />');
-                                $("#responselink").text(linkstring);
+                                var link = "http://www.diegilde2-browsergame.de/scripts/buyItem.php?item=" + ids[i] + "&target=CHILD&iv=1";
+                                $("#response").html('<object data=' + link + ' />');
+                                $("#responselink").text(link);
 
                                 i++;
                                 if (i < ids.length) {
