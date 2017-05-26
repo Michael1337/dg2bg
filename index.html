@@ -37,7 +37,7 @@
 
             <img src="./images/takeabath.png" onclick="showZuber()"/><br>
             <script type="text/javascript">
-                function showZuber(){
+                function showZuber() {
                     var zuberstring = "http://www.diegilde2-browsergame.de/measure.php?ms=TakeABath";
                     $("#responselink").html('In den Zuber steigen');
                     $("#response").html('<object data=' + zuberstring + ' />');
@@ -54,7 +54,7 @@
 
             <img src="./images/playagame.png" onclick="showDicegame()"/><br>
             <script type="text/javascript">
-                function showDicegame(){
+                function showDicegame() {
                     var dicestring = "http://www.diegilde2-browsergame.de/measure.php?ms=PlayTheGame";
 
                     $("#responselink").text("Beim Würfelspiel betrügen!");
@@ -124,7 +124,6 @@
                 });
 
                 var i = 1;
-
                 function myLoop() {
                     setTimeout(function () {
 
@@ -133,16 +132,49 @@
                         $("#responselink").text("Quest Nummer: " + i);
 
                         i++;
-                        if (i < 26) {
+                        if (i <= 26) {
                             myLoop();
                         } else {
                             $("#response").text("Alle angenommen!");
                             $("#responselink").text("");
                         }
+                    }, 50)
+                }
+            </script>
+
+            <button id='quests2'>Quests erfüllen</button>
+            <br>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $("#quests2").click(function () {
+                        $("#responselink").text("Quest-Erfüllung gestartet!");
+                        myLoop();
+                    });
+                });
+
+                var i = 1;
+                var j = 1;
+                function myLoop() {
+                    setTimeout(function () {
+
+                        var queststring = "http://www.diegilde2-browsergame.de/scripts/doQuestitem.php?qp=" + i + "&q=" + j;
+                        $("#response").html('<object data=' + queststring + ' />');
+                        $("#responselink").text("Quest Nummer: " + "qp=" + i + "&q=" + j);
+
+                        if (j >= 3) {
+                            j = 1;
+                            i++;
+                        } else {
+                            j++;
+                        }
+                        if (i <= 26) {
+                            myLoop();
+                        } else {
+                            $("#response").text("Alle erfüllt!");
+                            $("#responselink").text("");
+                        }
                     }, 500)
                 }
-
-
             </script>
 
             <button id='epitems'>EP-Items kaufen</button>
