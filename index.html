@@ -121,12 +121,12 @@
             </script>
 
 
-            <button id='jutebeutelbutton'>Jutebeutel abfarmen</button>
+            <button id='jutebeutelbutton'>Jutebeutel abfarmen</button><input id="jutesekunden" name="jutesekunden" type="text" value="1000" maxlength="4" />
             <br>
             <script type="text/javascript">
                 $(document).ready(function () {
                     $("#jutebeutelbutton").click(function () {
-                        $("#responselink").text("Jutebeutel-Fram gestartet!");
+                        $("#responselink").text("Jutebeutel-Farm gestartet!");
                         juteLoop();
                     });
                 });
@@ -147,7 +147,7 @@
                             $("#response").text("Alle abgefarmt!");
                             $("#responselink").text("");
                         }
-                    }, 800)
+                    }, document.getElementById('jutesekunden').value)
                 }
             </script>
 
