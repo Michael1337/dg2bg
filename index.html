@@ -35,17 +35,14 @@
             <a href="http://www.diegilde2-browsergame.de/measure.php?ms=Quacksalver">Quacksalben</a><br/>
 
 
-            <button id='zuber'>Zuber</button>
-            <br>
+            <img src="./images/takeabath.png" onclick="showZuber()"/><br>
             <script type="text/javascript">
-                $(document).ready(function () {
-                    $("#zuber").click(function () {
-                        var zuberstring = "http://www.diegilde2-browsergame.de/measure.php?ms=TakeABath";
-                        $("#responselink").html('In den Zuber steigen');
-                        $("#response").html('<object data=' + zuberstring + ' />');
-                        $("#action").html('');
-                    });
-                });
+                function showZuber(){
+                    var zuberstring = "http://www.diegilde2-browsergame.de/measure.php?ms=TakeABath";
+                    $("#responselink").html('In den Zuber steigen');
+                    $("#response").html('<object data=' + zuberstring + ' />');
+                    $("#action").html('');
+                }
             </script>
 
 
@@ -55,18 +52,15 @@
             <a href="http://www.diegilde2-browsergame.de/scripts/doSpy.php?tar=0">Spion aussenden</a><br/>
 
 
-            <button id='dicegameButton'>Beim Würfelspiel betrügen</button><br>
+            <img src="./images/playagame.png" onclick="showDicegame()"/><br>
             <script type="text/javascript">
-                $(document).ready(function () {
-                    $("#dicegameButton").click(function () {
+                function showDicegame(){
+                    var dicestring = "http://www.diegilde2-browsergame.de/measure.php?ms=PlayTheGame";
 
-                      var dicestring = "http://www.diegilde2-browsergame.de/measure.php?ms=PlayTheGame";
-
-                      $("#responselink").text("Beim Würfelspiel betrügen!");
-                      $("#response").html('<object data=' + dicestring + ' />');
-                      $("#action").html('<a href="http://www.diegilde2-browsergame.de/scripts/msPlayTheGame.php?step=6&startgold=794868&roundgold=48737&r1me=3&r2me=4&r3me=6&r4me=2&r5me=3&r1ai=3&r2ai=6&r3ai=1&r4ai=1&r5ai=5&mefinal=1&aifinal=1">Betrug starten</a><br/> http://www.diegilde2-browsergame.de/assets/css/dicegame.css?v=1495756510');
-                    });
-                });
+                    $("#responselink").text("Beim Würfelspiel betrügen!");
+                    $("#response").html('<object data=' + dicestring + ' />');
+                    $("#action").html('<a href="http://www.diegilde2-browsergame.de/scripts/msPlayTheGame.php?step=6&startgold=794868&roundgold=48737&r1me=3&r2me=4&r3me=6&r4me=2&r5me=3&r1ai=3&r2ai=6&r3ai=1&r4ai=1&r5ai=5&mefinal=1&aifinal=1">Betrug starten</a><br/> http://www.diegilde2-browsergame.de/assets/css/dicegame.css?v=1495756510');
+                }
             </script>
 
 
