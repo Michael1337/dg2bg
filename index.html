@@ -36,6 +36,9 @@
 
 
             <a href="http://www.diegilde2-browsergame.de/measure.php?ms=TakeABath">In den Zuber steigen</a><br/>
+            <a href="http://www.diegilde2-browsergame.de/scripts/doTakeABath.php?tar=MAIN">In den Zuber steigen (MAIN)</a><br/>
+            <a href="http://www.diegilde2-browsergame.de/scripts/doTakeABath.php?tar=COURT">In den Zuber steigen (COURT)</a><br/>
+            <a href="http://www.diegilde2-browsergame.de/scripts/doTakeABath.php?tar=CHILD">In den Zuber steigen (CHILD)</a><br/>
 
 
             <a href="http://www.diegilde2-browsergame.de/building.php?m=2&bp=bp1">Gebäude reparieren?</a><br/>
@@ -97,13 +100,35 @@
             </script>
 
             <button id='epitems'>EP-Items kaufen</button>
+            <button id='epitems2'>EP-Items kaufen</button>
 
             <script type="text/javascript">
                 $(document).ready(function () {
                     $("#epitems").click(function () {
                         var i = 1;
 
-                        var ids = [23, 27, 45, 47, 82, 67, 101, 106, 135, 133, 132, 126, 129, 127, 48, 168, 167, 390];
+                        var ids = [23, 27, 45, 47, 82, 67, 101, 106, 135, 133, 132, 126];
+
+                        function myLoop() {
+                            setTimeout(function () {
+
+                                var linkstring = "http://www.diegilde2-browsergame.de/scripts/buyItem.php?item=" + ids[i] + "&target=CHILD&iv=1";
+                                $("#response").html('<object data=' + linkstring + ' />');
+                                $("#responselink").text(linkstring);
+
+                                i++;
+                                if (i < ids.length) {
+                                    myLoop();
+                                }
+                            }, 1000)
+                        }
+
+                        myLoop();
+                    });
+                    $("#epitems2").click(function () {
+                        var i = 1;
+
+                        var ids = [129, 127, 48, 168, 167, 390];
 
                         function myLoop() {
                             setTimeout(function () {
