@@ -76,12 +76,13 @@
 </script>
 
 <button id='epitems'>EP-Items kaufen</button>
+
 <script type="text/javascript">
     $(document).ready(function () {
         $("#epitems").click(function () {
             $.ajax({
                 type: "GET",
-                url: "http://www.diegilde2-browsergame.de/scripts/buyItem.php?&item=129",
+                url: "http://www.diegilde2-browsergame.de/scripts/buyItem.php?item=129&target=CHILD&iv=1",
                 data: {
                     "target": "CHILD",
                     "iv": 1
