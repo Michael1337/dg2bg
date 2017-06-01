@@ -329,8 +329,21 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $("#gameBtn").click(function () {
 
+    function updateGold() {
+        var gold1 = parseInt($("#gameGold").val());
+        var gold2 = parseInt($("#gameGold2").val());
+        var gold3 = (gold1+gold2*5)*2;
+        $("#gameGold3").val(gold3);
+    }
+    $("#gameGold").change(function () {
+        updateGold();
+    });
+    $("#gameGold2").change(function () {
+        updateGold();
+    });
+
+    $("#gameBtn").click(function () {
         var link = "http://www.diegilde2-browsergame.de/scripts/msPlayTheGame.php?step=6" +
             "&startgold=" + document.getElementById("gameGold").value +
             "&roundgold=" + document.getElementById("gameGold2").value +
