@@ -40,7 +40,8 @@ function showSchmuggel() {
     var link = "http://www.diegilde2-browsergame.de/quests.php?m=7";
     $("#responselink").html('Warenschmuggel');
     $("#response").html('<object data=' + link + ' />');
-    $("#action").html('');
+    $("#action").html('Ändere "chance" zu 100 und füge "&iv=[x]" hinzu.');
+
 }
 
 function showOrderCollectEvidence() {
@@ -162,17 +163,6 @@ function showDicegame() {
     $("#responselink").text("Beim Würfelspiel betrügen!");
     $("#response").html('<object data=' + link + ' />');
     $("#action").html('<a href="http://www.diegilde2-browsergame.de/scripts/msPlayTheGame.php?step=6&startgold=794868&roundgold=48737&r1me=3&r2me=4&r3me=6&r4me=2&r5me=3&r1ai=3&r2ai=6&r3ai=1&r4ai=1&r5ai=5&mefinal=1&aifinal=1">Betrug starten</a><br/> http://www.diegilde2-browsergame.de/assets/css/dicegame.css?v=1495756510');
-}
-
-function moveItem369() {
-    $.ajax({
-        type: "GET",
-        url: "./scripts/doSmuggel.php?item=369&id=225&chance=100",
-        data: {"iv": document.getElementById("itemvalue369").value},
-        success: function (data) {
-            $("#errorbox2225").html(data);
-        }
-    });
 }
 
 $(document).ready(function () {
