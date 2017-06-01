@@ -22,7 +22,6 @@
         <div class="col-xs-3">
             <div class="container-custom">
 
-                <a href="http://www.diegilde2-browsergame.de/quests.php?ms=7">Warenschmuggel</a><br/>
                 <a href="http://www.diegilde2-browsergame.de/building.php?m=2&bp=bp1">Gebäude reparieren?</a><br/>
                 <a href="http://www.diegilde2-browsergame.de/measure.php?ms=Jugde&points=770">Richter bestechen (zu
                     testen)</a><br/>
@@ -55,6 +54,7 @@
                         <img src="./images/ChangeFaith.png" title="ChangeFaith" role="button"
                              onclick="showChangeFaith()"/>
                         <img src="./images/Spy.png" title="Spy" role="button" onclick="showSpy()"/>
+                        <img src="./images/warenschmuggel.png" title="Warenschmuggel" role="button" onclick="showSchmuggel()"/>
                         <img src="./images/OrderCollectEvidence.png" title="OrderCollecEvidence" role="button"
                              onclick="showOrderCollectEvidence()"/>
                         <img src="./images/Quacksalver.png" title="Quacksalver" role="button" onclick="showQuack()"/>
@@ -198,7 +198,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="btn-group-justified" role="group" aria-label="EP abziehen">
+                <div class="btn-group-justified margin-bottom" role="group" aria-label="EP abziehen">
                     <div class="btn-group" role="group">
                         <select name="item2" id="itemsToBuy2" class="form-control">
                             <option value="MAIN">Main</option>
@@ -210,8 +210,62 @@
                         <button id='epitems' type="button" class="btn btn-default">Items kaufen</button>
                     </div>
                 </div>
-            </div>
 
+                <div class="btn-group-justified" role="group" aria-label="Spiel">
+                    <div class="btn-group" role="group">
+                        Me:
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input id="gameMe1" name="gameMe1" type="text" value="3" class="form-control"/>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input id="gameMe2" name="gameMe2" type="text" value="4" class="form-control"/>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input id="gameMe3" name="gameMe3" type="text" value="6" class="form-control"/>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input id="gameMe4" name="gameMe4" type="text" value="2" class="form-control"/>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input id="gameMe5" name="gameMe5" type="text" value="3" class="form-control"/>
+                    </div>
+                </div>
+                <div class="btn-group-justified" role="group" aria-label="Spiel">
+                    <div class="btn-group" role="group">
+                        Ai:
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input id="gameAi1" name="gameAi1" type="text" value="3" class="form-control"/>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input id="gameAi2" name="gameAi2" type="text" value="6" class="form-control"/>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input id="gameAi3" name="gameAi3" type="text" value="1" class="form-control"/>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input id="gameAi4" name="gameAi4" type="text" value="1" class="form-control"/>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input id="gameAi5" name="gameAi5" type="text" value="5" class="form-control"/>
+                    </div>
+                </div>
+                <div class="btn-group-justified" role="group" aria-label="Spiel">
+                    <div class="btn-group" role="group">
+                        Gold:
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input id="gameGold" name="gameAi1" type="text" value="794868" class="form-control"/>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input id="gameGold2" name="gameAi1" type="text" value="48737" class="form-control"/>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button id='gameBtn' type="button" class="btn btn-default">Betrügen</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="col-xs-9">

@@ -36,6 +36,13 @@ function showSpy() {
     $("#action").html('');
 }
 
+function showSchmuggel() {
+    var link = "http://www.diegilde2-browsergame.de/quests.php?m=7";
+    $("#responselink").html('Warenschmuggel');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
 function showOrderCollectEvidence() {
     var link = "http://www.diegilde2-browsergame.de/measure.php?ms=OrderCollectEvidence";
     $("#responselink").html('Sich umhören');
@@ -326,6 +333,28 @@ $(document).ready(function () {
     $("#itemcheatbtn").click(function () {
 
         var link = "http://www.diegilde2-browsergame.de/scripts/moveItem.php?bp=bp2&item=" + document.getElementById("itemcheat").value + "&id=226&menu=prod&iv=1&target=" + document.getElementById("itemcheat2").value;
+        $("#response").html('<object data=' + link + ' />');
+        $("#responselink").text(link);
+    });
+});
+
+$(document).ready(function () {
+    $("#gameBtn").click(function () {
+
+        var link = "http://www.diegilde2-browsergame.de/scripts/msPlayTheGame.php?step=6" +
+            "&startgold=" + document.getElementById("gameGold").value +
+            "&roundgold=" + document.getElementById("gameGold2").value +
+            "&r1me=" + document.getElementById("gameMe1").value +
+            "&r2me=" + document.getElementById("gameMe2").value +
+            "&r3me=" + document.getElementById("gameMe3").value +
+            "&r4me=" + document.getElementById("gameMe4").value +
+            "&r5me=" + document.getElementById("gameMe5").value +
+            "&r1ai=" + document.getElementById("gameAi1").value +
+            "&r2ai=" + document.getElementById("gameAi2").value +
+            "&r3ai=" + document.getElementById("gameAi3").value +
+            "&r4ai=" + document.getElementById("gameAi4").value +
+            "&r5ai=" + document.getElementById("gameAi5").value +
+            "&mefinal=1&aifinal=1";
         $("#response").html('<object data=' + link + ' />');
         $("#responselink").text(link);
     });
