@@ -22,6 +22,20 @@ function showTrain() {
     $("#action").html('');
 }
 
+function showChangeFaith() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=ChangeFaith";
+    $("#responselink").html('Glauben wechseln');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
+function showSpy() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=Spy";
+    $("#responselink").html('Sich umhören');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
 function showOrderCollectEvidence() {
     var link = "http://www.diegilde2-browsergame.de/measure.php?ms=OrderCollectEvidence";
     $("#responselink").html('Sich umhören');
