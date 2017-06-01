@@ -58,6 +58,20 @@ function showQuack() {
     $("#action").html('');
 }
 
+function showPickPocket() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=PickPocket";
+    $("#responselink").html('Taschendiebstahl');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
+function showMsHijack() {
+    var link = "http://www.diegilde2-browsergame.de/scripts/msHijack.php?m=1";
+    $("#responselink").html('Zellenplan');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
 function showZuber() {
     var link = "http://www.diegilde2-browsergame.de/measure.php?ms=TakeABath";
     $("#responselink").html('In den Zuber steigen');
@@ -74,6 +88,13 @@ function showBrainwash() {
 
 function showObserve() {
     var link = "http://www.diegilde2-browsergame.de/measure.php?ms=observe";
+    $("#responselink").html('Entführungsopfer finden');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
+function showObserve100() {
+    var link = "http://www.diegilde2-browsergame.de/scripts/doObserve.php?c=100";
     $("#responselink").html('Entführungsopfer finden');
     $("#response").html('<object data=' + link + ' />');
     $("#action").html('');
