@@ -40,17 +40,43 @@
                         class="startbutton moveitem btn btn-default">"Schmuggelversuch unternehmen"
                 </button>
                 <br><br>
+                Wirken sofort:
+                <div class="row margin-bottom">
+                    <div class="col-xs-12">
+                        <img src="./images/prey.png" title="Prey" role="button" onclick="showPrey()"/>
+                        <img src="./images/aufschlag.png" title="Aufschlag" role="button" onclick="showAufschlag()"/>
+                        <img src="./images/gastbestehlen.png" title="Gastbestehlen" role="button"
+                             onclick="showGastbestehlen()"/></div>
+                </div>
+
+                Mit Bestätigung:
                 <div class="row margin-bottom">
                     <div class="col-xs-12">
                         <img src="./images/winbeliver.png" title="Winbeliever" role="button"
                              onclick="showWinBeliver()"/>
-                        <img src="./images/prey.png" title="Prey" role="button" onclick="showPrey()"/>
                         <img src="./images/train.png" title="Train" role="button" onclick="showTrain()"/>
                         <img src="./images/OrderCollectEvidence.png" title="OrderCollecEvidence" role="button"
                              onclick="showOrderCollectEvidence()"/>
                         <img src="./images/Quacksalver.png" title="Quacksalver" role="button" onclick="showQuack()"/>
                         <img src="./images/takeabath.png" title="Takeabath" role="button" onclick="showZuber()"/>
-                        <img src="./images/playagame.png" title="Takeabath" role="button" onclick="showDicegame()"/>
+                        <img src="./images/brainwash.png" title="Brainwash" role="button" onclick="showBrainwash()"/>
+                        <img src="./images/observe.png" title="Observe" role="button" onclick="showObserve()"/>
+                        <img src="./images/blemishchair.png" title="Blemishchair" role="button"
+                             onclick="showBlemishchair()"/>
+                        <img src="./images/plunderguild.png" title="Plunderguild" role="button"
+                             onclick="showPlunderguild()"/>
+                        <img src="./images/havevision.png" title="Havevision" role="button" onclick="showHavevision()"/>
+                        <img src="./images/makeevocation.png" title="Makeevocation" role="button"
+                             onclick="showMakeevocation()"/>
+                        <img src="./images/playagame.png" title="Playagame" role="button" onclick="showDicegame()"/>
+                        <img src="./images/forgivesins.png" title="Forgivesins" role="button"
+                             onclick="showForgivesins()"/>
+                        <img src="./images/INSPECTBUSINESS.png" title="Inspectbusiness" role="button"
+                             onclick="showInspectbusiness()"/>
+                        <img src="./images/SEVERITYOFLAW.png" title="Severityoflaw" role="button"
+                             onclick="showSeverityoflaw()"/>
+                        <img src="./images/settax.png" title="SetGuildtax" role="button" onclick="showSetGuildtax()"/>
+                        <img src="./images/newlaw.png" title="NewLawKIDNAP" role="button" onclick="showNewLawKIDNAP()"/>
                     </div>
                 </div>
 
@@ -76,15 +102,6 @@
                     </div>
                     <div class="btn-group" role="group">
                         <button id='quests2' type="button" class="btn btn-default">Quests erfüllen</button>
-                    </div>
-                </div>
-
-                <div class="btn-group-justified margin-bottom" role="group" aria-label="EP abziehen">
-                    <div class="btn-group" role="group">
-                        <button id='epitems' type="button" class="btn btn-default">EP-Items kaufen</button>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <button id='epitems2' type="button" class="btn btn-default">EP-Items kaufen 2</button>
                     </div>
                 </div>
 
@@ -117,12 +134,35 @@
                 <div class="btn-group-justified" role="group" aria-label="Itemgetter">
                     <div class="btn-group" role="group">
                         <select name="item" id="itemcheat" class="form-control">
-                            <option value="1028">Horn von Jericho</option>
-                            <option value="1014">Brodem der Willfährigkeit</option>
+
+                            <optgroup label="Tränke und Brodem">
+                                <option value="1001">Trank der Arbeitsfreude</option>
+                                <option value="1002">Traumgift</option>
+                                <option value="1004">Trank des 7. Sinnes</option>
+                                <option value="1010">Brodem der Manipulation</option>
+                                <option value="1011">Brodem des Todes</option>
+                                <option value="1014">Brodem der Willfährigkeit</option>
+                                <option value="1015">Magische Tinte</option>
+                                <option value="1016">Blumen der unglaublichen Geschwindigkeit</option>
+                                <option value="1022">Kompass von Kolumbus</option>
+                                <option value="1028">Horn von Jericho</option>
+                                <option value="1030">Stein der Weisen</option>
+                            </optgroup>
+                            <optgroup label="Jutebeutel">
+                                <option value="1059">Jutebeutel</option>
+                            </optgroup>
+                            <optgroup label="Gildensiegel">
+                                <option value="1079">Sand der Zeit</option>
+                                <option value="1080">Letter der Justicia</option>
+                                <option value="1081">Almanach der Gilden</option>
+                                <option value="1082">Rucksack des Weltenbummler</option>
+                                <option value="1083">Depeche der Erfahrung</option>
+                                <option value="1084">Beutel mit Goldmünzen</option>
+                            </optgroup>
                         </select>
                     </div>
                 </div>
-                <div class="btn-group-justified" role="group" aria-label="Itemgetter">
+                <div class="btn-group-justified margin-bottom" role="group" aria-label="Itemgetter">
                     <div class="btn-group" role="group">
                         <select name="item" id="itemcheat2" class="form-control">
                             <option value="MAIN">Main</option>
@@ -131,11 +171,47 @@
                         </select>
                     </div>
                     <div class="btn-group" role="group">
-                        <button id="itemcheatbtn" type="button" class="btn btn-default">Get Item</button>
+                        <button id="itemcheatbtn" type="button" class="btn btn-default">Item ercheaten</button>
                     </div>
                 </div>
 
+                <div class="btn-group-justified" role="group" aria-label="EP abziehen">
+                    <div class="btn-group" role="group">
+                        <select multiple class="form-control" id="itemsToBuy" size="7">
+                            <option value="23">Kuchen</option>
+                            <option value="27">Praline</option>
+                            <option value="45">Met</option>
+                            <option value="48">Geisternebel</option>
+                            <option value="67">Gürtel der Methaphysik</option>
+                            <option value="82">Gehstock</option>
+                            <option value="101">Geldbeutel</option>
+                            <option value="106">Duellhandschuhe</option>
+                            <option value="126">Parfum</option>
+                            <option value="127">Dartagnans Duft</option>
+                            <option value="129">Elixir des Dr. Faustus</option>
+                            <option value="132">Blumen der Zwietracht</option>
+                            <option value="133">Unkendung</option>
+                            <option value="135">Krötenschleim</option>
+                            <option value="167">Brief aus Rom</option>
+                            <option value="168">Thesenpapier</option>
+                            <option value="390">Nekromantenrobe</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="btn-group-justified" role="group" aria-label="EP abziehen">
+                    <div class="btn-group" role="group">
+                        <select name="item2" id="itemsToBuy2" class="form-control">
+                            <option value="MAIN">Main</option>
+                            <option value="COURT">Court</option>
+                            <option value="CHILD">Child</option>
+                        </select>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button id='epitems' type="button" class="btn btn-default">Items kaufen</button>
+                    </div>
+                </div>
             </div>
+
         </div>
 
         <div class="col-xs-9">

@@ -43,6 +43,98 @@ function showZuber() {
     $("#action").html('');
 }
 
+function showBrainwash() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=brainwash";
+    $("#responselink").html('Gehirnwäsche');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
+function showObserve() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=observe";
+    $("#responselink").html('Entführungsopfer finden');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
+function showBlemishchair() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=blemishchair";
+    $("#responselink").html('Jemanden auf den Schandstuhl setzen');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
+function showAufschlag() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=aufschlag";
+    $("#responselink").html('10% Aufschlag');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
+function showGastbestehlen() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=gastbestehlen";
+    $("#responselink").html('Gast bestehlen');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
+function showPlunderguild() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=plunderguild";
+    $("#responselink").html('Gelder der Gilde veruntreuen');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
+function showHavevision() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=havevision";
+    $("#responselink").html('Vision erhalten');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
+function showMakeevocation() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=makeevocation";
+    $("#responselink").html('Ein Gebäude verfluchen');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
+function showForgivesins() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=forgivesins";
+    $("#responselink").html('Sünden vergeben');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
+function showInspectbusiness() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=inspectbusiness";
+    $("#responselink").html('Einen Betrieb inspizieren');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
+function showSeverityoflaw() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=severityoflaw";
+    $("#responselink").html('Härte des Gesetzes');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
+function showSetGuildtax() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=SetGuildtax";
+    $("#responselink").html('Gildensteuer ändern');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
+function showNewLawKIDNAP() {
+    var link = "http://www.diegilde2-browsergame.de/scripts/msSetLaw.php?law=KIDNAP";
+    //FRAUD
+    $("#responselink").html('Gesetz - Entführung- ändern');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
 function showDicegame() {
     var link = "http://www.diegilde2-browsergame.de/measure.php?ms=PlayTheGame";
 
@@ -65,22 +157,19 @@ function moveItem369() {
 $(document).ready(function () {
     $("#jutebeutelbutton").click(function () {
         $("#responselink").text("Jutebeutel-Farm gestartet!");
-        juteLoop();
+        juteLoop(1);
     });
 });
 
-var i = 1;
-
-function juteLoop() {
+function juteLoop(i) {
     setTimeout(function () {
-
         var link = "http://www.diegilde2-browsergame.de/scripts/foundItem.php?i=" + i;
         $("#response").html('<object data=' + link + ' />');
         $("#responselink").text("Jutebeutel Nummer: " + i);
 
         i++;
         if (i <= 26) {
-            juteLoop();
+            juteLoop(i);
         } else {
             $("#response").text("Alle abgefarmt!");
             $("#responselink").text("");
@@ -97,7 +186,7 @@ function msAcceptQuest12() {
             $("#response").html(data);
         }
     });
-};
+}
 
 function test() {
     var obj = {m: 1, qid: 12};
@@ -136,12 +225,11 @@ function postIframe(target_url, method, params) {
 $(document).ready(function () {
     $("#quests").click(function () {
         $("#responselink").text("Quest-Annahme gestartet!");
-        quest1Loop();
+        quest1Loop(1);
     });
 });
 
-var i = 1;
-function quest1Loop() {
+function quest1Loop(i) {
     setTimeout(function () {
 
         var link = "http://www.diegilde2-browsergame.de/scripts/doQuest.php?m=1&qid=" + i;
@@ -150,7 +238,7 @@ function quest1Loop() {
 
         i++;
         if (i <= 26) {
-            quest1Loop();
+            quest1Loop(i);
         } else {
             $("#response").text("Alle angenommen!");
             $("#responselink").text("");
@@ -161,13 +249,11 @@ function quest1Loop() {
 $(document).ready(function () {
     $("#quests2").click(function () {
         $("#responselink").text("Quest-Erfüllung gestartet!");
-        quest2Loop();
+        quest2Loop(1, 1);
     });
 });
 
-var i = 1;
-var j = 1;
-function quest2Loop() {
+function quest2Loop(i, j) {
     setTimeout(function () {
 
         var link = "http://www.diegilde2-browsergame.de/scripts/doQuestitem.php?qp=" + i + "&q=" + j;
@@ -181,58 +267,37 @@ function quest2Loop() {
             j++;
         }
         if (i <= 26) {
-            quest2Loop();
+            quest2Loop(i, j);
         } else {
             $("#response").text("Alle erfüllt!");
             $("#responselink").text("");
         }
-    }, 300)
+    }, 800)
 }
 
 $(document).ready(function () {
     $("#epitems").click(function () {
-        var i = 1;
-
-        var ids = [23, 27, 45, 47, 82, 67, 101, 106, 135, 133, 132, 126];
-
-        function myLoop() {
-            setTimeout(function () {
-
-                var link = "http://www.diegilde2-browsergame.de/scripts/buyItem.php?item=" + ids[i] + "&target=CHILD&iv=1";
-                $("#response").html('<object data=' + link + ' />');
-                $("#responselink").text(link);
-
-                i++;
-                if (i < ids.length) {
-                    myLoop();
-                }
-            }, 1000)
-        }
-
-        myLoop();
-    });
-    $("#epitems2").click(function () {
-        var i = 1;
-
-        var ids = [129, 127, 48, 168, 167, 390];
-
-        function myLoop() {
-            setTimeout(function () {
-
-                var link = "http://www.diegilde2-browsergame.de/scripts/buyItem.php?item=" + ids[i] + "&target=CHILD&iv=1";
-                $("#response").html('<object data=' + link + ' />');
-                $("#responselink").text(link);
-
-                i++;
-                if (i < ids.length) {
-                    myLoop();
-                }
-            }, 1000)
-        }
-
-        myLoop();
+        $("#responselink").text("Item-Kauf begonnen!");
+        var ids = $('#itemsToBuy').val();
+        buyLoop(0, ids);
     });
 });
+
+function buyLoop(i, ids) {
+    setTimeout(function () {
+        var link = "http://www.diegilde2-browsergame.de/scripts/buyItem.php?item=" + ids[i] + "&target=" + document.getElementById("itemsToBuy2").value + "&iv=1";
+        $("#response").html('<object data=' + link + ' />');
+        $("#responselink").text(link + "" + ids.length);
+
+        i++;
+        if (i <= ids.length) {
+            buyLoop(i, ids);
+        } else {
+            $("#response").text("Alles gekauft!");
+            $("#responselink").text("");
+        }
+    }, 1000)
+}
 
 $(document).ready(function () {
     $("#epabziehen").click(function () {
