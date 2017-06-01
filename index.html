@@ -10,338 +10,142 @@
     <link rel="stylesheet" href="css/bootstrap-reboot.css">
 
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
 </head>
 
 <body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="container-custom">
 
-<div class="row">
-    <div class="col-3">
-        <div class="container">
+                <a href="http://www.diegilde2-browsergame.de/measure.php?ms=ChangeFaith">Glaubenswechsel</a><br/>
+                <a href="http://www.diegilde2-browsergame.de/measure.php?ms=Spy">Jemanden ausspionieren...</a><br/>
+                <a href="http://www.diegilde2-browsergame.de/quests.php?ms=7">Warenschmuggel</a><br/>
+                <a href="http://www.diegilde2-browsergame.de/building.php?m=2&bp=bp1">Gebäude reparieren?</a><br/>
+                <a href="http://www.diegilde2-browsergame.de/scripts/doSpy.php?tar=0">Spion aussenden</a><br/>
+                <a href="http://www.diegilde2-browsergame.de/measure.php?ms=Jugde&points=770">Richter bestechen (zu
+                    testen)</a><br/>
+                <!--
+                http://www.diegilde2-browsergame.de/scripts/doJugdement.php?ms=bestechen
+                http://www.diegilde2-browsergame.de/measure.php?ms=Jugde&points=202
+                http://www.diegilde2-browsergame.de/scripts/msJugde.php?points=402
+                -->
 
-            <a href="http://www.diegilde2-browsergame.de/measure.php?ms=ChangeFaith">Glaubenswechsel</a><br/>
+                <a href="#" onclick="test()">Questannahme 2</a><br>
+                <button type="button" id="change369" onclick="moveItem369();"
+                        class="startbutton moveitem btn btn-default">"Schmuggelversuch unternehmen"
+                </button>
+                <br><br>
+                <div class="row margin-bottom">
+                    <div class="col-xs-12">
+                        <img src="./images/winbeliver.png" title="Winbeliever" role="button"
+                             onclick="showWinBeliver()"/>
+                        <img src="./images/prey.png" title="Prey" role="button" onclick="showPrey()"/>
+                        <img src="./images/train.png" title="Train" role="button" onclick="showTrain()"/>
+                        <img src="./images/OrderCollectEvidence.png" title="OrderCollecEvidence" role="button"
+                             onclick="showOrderCollectEvidence()"/>
+                        <img src="./images/Quacksalver.png" title="Quacksalver" role="button" onclick="showQuack()"/>
+                        <img src="./images/takeabath.png" title="Takeabath" role="button" onclick="showZuber()"/>
+                        <img src="./images/playagame.png" title="Takeabath" role="button" onclick="showDicegame()"/>
+                    </div>
+                </div>
 
-            <a href="http://www.diegilde2-browsergame.de/measure.php?ms=Spy">Jemanden ausspionieren...</a><br/>
-            <a href="http://www.diegilde2-browsergame.de/quests.php?ms=7">Warenschmuggel</a><br/>
+                <div class="row margin-bottom">
+                    <div class="col-xs-12">
+                        <div class="input-group btn-group-justified">
+                            <div class="btn-group" role="group">
+                                <input id="jutesekunden" name="jutesekunden" type="text" value="1000"
+                                       class="form-control"/>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button id='jutebeutelbutton' type="button" class="btn btn-default">Jutebeutel
+                                    abfarmen
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="btn-group btn-group-justified margin-bottom" role="group" aria-label="Quests">
+                    <div class="btn-group" role="group">
+                        <button id='quests' type="button" class="btn btn-default">Quests annehmen</button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button id='quests2' type="button" class="btn btn-default">Quests erfüllen</button>
+                    </div>
+                </div>
 
-            <img src="./images/winbeliver.png" onclick="showWinBeliver()"/><br>
-            <script type="text/javascript">
-                function showWinBeliver() {
-                    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=WinBeliver";
-                    $("#responselink").html('Gläubige gewinnen');
-                    $("#response").html('<object data=' + link + ' />');
-                    $("#action").html('');
-                }
-            </script>
+                <div class="btn-group-justified margin-bottom" role="group" aria-label="EP abziehen">
+                    <div class="btn-group" role="group">
+                        <button id='epitems' type="button" class="btn btn-default">EP-Items kaufen</button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button id='epitems2' type="button" class="btn btn-default">EP-Items kaufen 2</button>
+                    </div>
+                </div>
 
-            <img src="./images/prey.png" onclick="showPrey()"/><br>
-            <script type="text/javascript">
-                function showPrey() {
-                    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=Prey";
-                    $("#responselink").html('Predigt abhalten');
-                    $("#response").html('<object data=' + link + ' />');
-                    $("#action").html('');
-                }
-            </script>
+                <div class="btn-group-justified margin-bottom" role="group" aria-label="EP abziehen">
+                    <div class="btn-group" role="group">
+                        <select name="number" id="spyopfer" class="form-control">
+                            <option value="0">Opfer</option>
+                            <optgroup label="Dynastie Fraser">
+                                <option value="154" style="margin-left:15px">Claire Fraser</option>
+                                <option value="155" style="margin-left:15px">Wolfgang Fraser</option>
+                                <option value="156" style="margin-left:15px">Fergus Fraser</option>
+                            </optgroup>
+                            <optgroup label="Dynastie Boy">
+                                <option value="169" style="margin-left:15px">Schwaben Boy</option>
+                                <option value="170" style="margin-left:15px">Gertrude Boy</option>
+                                <option value="171" style="margin-left:15px">Waldemar Boy</option>
+                            </optgroup>
+                            <optgroup label="Dynastie Müllerchen">
+                                <option value="298" style="margin-left:15px">Don Müllerchen</option>
+                                <option value="299" style="margin-left:15px">Lina Müllerchen</option>
+                                <option value="300" style="margin-left:15px">Nico Müllerchen</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button id="epabziehen" type="button" class="btn btn-default">5.000 EP abziehen</button>
+                    </div>
+                </div>
 
-            <img src="./images/train.png" onclick="showTrain()"/><br>
-            <script type="text/javascript">
-                function showTrain() {
-                    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=Train";
-                    $("#responselink").html('Gruppenmitglied trainieren');
-                    $("#response").html('<object data=' + link + ' />');
-                    $("#action").html('');
-                }
-            </script>
+                <div class="btn-group-justified" role="group" aria-label="Itemgetter">
+                    <div class="btn-group" role="group">
+                        <select name="item" id="itemcheat" class="form-control">
+                            <option value="1028">Horn von Jericho</option>
+                            <option value="1014">Brodem der Willfährigkeit</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="btn-group-justified" role="group" aria-label="Itemgetter">
+                    <div class="btn-group" role="group">
+                        <select name="item" id="itemcheat2" class="form-control">
+                            <option value="MAIN">Main</option>
+                            <option value="COURT">Court</option>
+                            <option value="CHILD">Child</option>
+                        </select>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button id="itemcheatbtn" type="button" class="btn btn-default">Get Item</button>
+                    </div>
+                </div>
 
-            <img src="./images/OrderCollectEvidence.png" onclick="showOrderCollectEvidence()"/><br>
-            <script type="text/javascript">
-                function showOrderCollectEvidence() {
-                    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=OrderCollectEvidence";
-                    $("#responselink").html('Sich umhören');
-                    $("#response").html('<object data=' + link + ' />');
-                    $("#action").html('');
-                }
-            </script>
-
-            <img src="./images/Quacksalver.png" onclick="showQuack()"/><br>
-            <script type="text/javascript">
-                function showQuack() {
-                    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=Quacksalver";
-                    $("#responselink").html('Quacksalben');
-                    $("#response").html('<object data=' + link + ' />');
-                    $("#action").html('');
-                }
-            </script>
-
-            <img src="./images/takeabath.png" onclick="showZuber()"/><br>
-            <script type="text/javascript">
-                function showZuber() {
-                    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=TakeABath";
-                    $("#responselink").html('In den Zuber steigen');
-                    $("#response").html('<object data=' + link + ' />');
-                    $("#action").html('');
-                }
-            </script>
-
-
-            <a href="http://www.diegilde2-browsergame.de/building.php?m=2&bp=bp1">Gebäude reparieren?</a><br/>
-
-
-            <a href="http://www.diegilde2-browsergame.de/scripts/doSpy.php?tar=0">Spion aussenden</a><br/>
-
-            <a href="http://www.diegilde2-browsergame.de/measure.php?ms=Jugde&points=770">Richter bestechen (zu testen)</a><br/>
-            <!--
-            http://www.diegilde2-browsergame.de/scripts/doJugdement.php?ms=bestechen
-            http://www.diegilde2-browsergame.de/measure.php?ms=Jugde&points=202
-            http://www.diegilde2-browsergame.de/scripts/msJugde.php?points=402
-            -->
-
-
-            <img src="./images/playagame.png" onclick="showDicegame()"/><br>
-            <script type="text/javascript">
-                function showDicegame() {
-                    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=PlayTheGame";
-
-                    $("#responselink").text("Beim Würfelspiel betrügen!");
-                    $("#response").html('<object data=' + link + ' />');
-                    $("#action").html('<a href="http://www.diegilde2-browsergame.de/scripts/msPlayTheGame.php?step=6&startgold=794868&roundgold=48737&r1me=3&r2me=4&r3me=6&r4me=2&r5me=3&r1ai=3&r2ai=6&r3ai=1&r4ai=1&r5ai=5&mefinal=1&aifinal=1">Betrug starten</a><br/> http://www.diegilde2-browsergame.de/assets/css/dicegame.css?v=1495756510');
-                }
-            </script>
-
-
-            <input class="startbutton moveitem" type="button" id="change369" value="Schmuggelversuch unternehmen"
-                   onclick="moveItem369();"><br/>
-            <script type="text/javascript">
-                function moveItem369() {
-                    $.ajax({
-                        type: "GET",
-                        url: "./scripts/doSmuggel.php?item=369&id=225&chance=100",
-                        data: {"iv": document.getElementById("itemvalue369").value},
-                        success: function (data) {
-                            $("#errorbox2225").html(data);
-                        }
-                    });
-                }
-            </script>
-
-
-            <button id='jutebeutelbutton'>Jutebeutel abfarmen</button><input id="jutesekunden" name="jutesekunden" type="text" value="1000" maxlength="4" />
-            <br>
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    $("#jutebeutelbutton").click(function () {
-                        $("#responselink").text("Jutebeutel-Farm gestartet!");
-                        juteLoop();
-                    });
-                });
-
-                var i = 1;
-
-                function juteLoop() {
-                    setTimeout(function () {
-
-                        var link = "http://www.diegilde2-browsergame.de/scripts/foundItem.php?i=" + i;
-                        $("#response").html('<object data=' + link + ' />');
-                        $("#responselink").text("Jutebeutel Nummer: " + i);
-
-                        i++;
-                        if (i <= 26) {
-                            juteLoop();
-                        } else {
-                            $("#response").text("Alle abgefarmt!");
-                            $("#responselink").text("");
-                        }
-                    }, document.getElementById('jutesekunden').value)
-                }
-            </script>
-
-
-            <button id='quests'>Quests annehmen</button><br>
-            <a href="#" onclick="test()">Questannahme 2</a><br>
-            <script type="text/javascript">
-                function msAcceptQuest12(){
-                    $.ajax({
-                        type: "POST",
-                        url: "http://www.diegilde2-browsergame.de/scripts/doQuest.php?m=1&qid=12",
-                        crossDomain: true,
-                        success: function(data) {
-                            $("#response").html(data);
-                        }
-                    });
-                };
-
-                function test(){
-                    var obj = { m: 1, qid: 12 };
-                    postIframe('http://www.diegilde2-browsergame.de/scripts/doQuest.php', 'POST', obj)
-                }
-
-
-                function postIframe(target_url, method, params)
-                {
-                    //Add iframe
-                    var iframe = document.createElement("iframe");
-                    document.body.appendChild(iframe);
-                    iframe.style.display = "none";
-
-                    //Give the frame a name
-                    var frame_name = "frame_name" + (new Date).getTime();
-                    iframe.contentWindow.name = frame_name;
-                    //build the form
-                    var form = document.createElement("form");
-                    form.target = frame_name;
-                    form.action = target_url;
-                    form.method = method;
-                    //loop through all parameters
-                    for (var key in params)
-                    {
-                        if (params.hasOwnProperty(key))
-                        {
-                            var input = document.createElement("input");
-                            input.type = "hidden";
-                            input.name = key;
-                            input.value = params[key];
-                            form.appendChild(input);
-                        }
-                    }
-                    document.body.appendChild(form);
-                    form.submit();
-                }
-
-                $(document).ready(function () {
-                    $("#quests").click(function () {
-                        $("#responselink").text("Quest-Annahme gestartet!");
-                        quest1Loop();
-                    });
-                });
-
-                var i = 1;
-                function quest1Loop() {
-                    setTimeout(function () {
-
-                        var link = "http://www.diegilde2-browsergame.de/scripts/doQuest.php?m=1&qid=" + i;
-                        $("#response").html('<object data=' + link + ' />');
-                        $("#responselink").text("Quest Nummer: " + i);
-
-                        i++;
-                        if (i <= 26) {
-                            quest1Loop();
-                        } else {
-                            $("#response").text("Alle angenommen!");
-                            $("#responselink").text("");
-                        }
-                    }, 50)
-                }
-            </script>
-
-            <button id='quests2'>Quests erfüllen</button>
-            <br>
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    $("#quests2").click(function () {
-                        $("#responselink").text("Quest-Erfüllung gestartet!");
-                        quest2Loop();
-                    });
-                });
-
-                var i = 1;
-                var j = 1;
-                function quest2Loop() {
-                    setTimeout(function () {
-
-                        var link = "http://www.diegilde2-browsergame.de/scripts/doQuestitem.php?qp=" + i + "&q=" + j;
-                        $("#response").html('<object data=' + link + ' />');
-                        $("#responselink").text("Quest Nummer: " + "qp=" + i + "&q=" + j);
-
-                        if (j >= 3) {
-                            j = 1;
-                            i++;
-                        } else {
-                            j++;
-                        }
-                        if (i <= 26) {
-                            quest2Loop();
-                        } else {
-                            $("#response").text("Alle erfüllt!");
-                            $("#responselink").text("");
-                        }
-                    }, 300)
-                }
-            </script>
-
-            <button id='epitems'>EP-Items kaufen</button>
-            <button id='epitems2'>EP-Items kaufen</button>
-
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    $("#epitems").click(function () {
-                        var i = 1;
-
-                        var ids = [23, 27, 45, 47, 82, 67, 101, 106, 135, 133, 132, 126];
-
-                        function myLoop() {
-                            setTimeout(function () {
-
-                                var link = "http://www.diegilde2-browsergame.de/scripts/buyItem.php?item=" + ids[i] + "&target=CHILD&iv=1";
-                                $("#response").html('<object data=' + link + ' />');
-                                $("#responselink").text(link);
-
-                                i++;
-                                if (i < ids.length) {
-                                    myLoop();
-                                }
-                            }, 1000)
-                        }
-
-                        myLoop();
-                    });
-                    $("#epitems2").click(function () {
-                        var i = 1;
-
-                        var ids = [129, 127, 48, 168, 167, 390];
-
-                        function myLoop() {
-                            setTimeout(function () {
-
-                                var link = "http://www.diegilde2-browsergame.de/scripts/buyItem.php?item=" + ids[i] + "&target=CHILD&iv=1";
-                                $("#response").html('<object data=' + link + ' />');
-                                $("#responselink").text(link);
-
-                                i++;
-                                if (i < ids.length) {
-                                    myLoop();
-                                }
-                            }, 1000)
-                        }
-
-                        myLoop();
-                    });
-                });
-            </script>
-            <select name="number" id="spyopfer"><option value="0">Wem wollt Ihr EP abziehen?</option><optgroup label="Dynastie Martin"><option value="31" style="margin-left:15px">Martin Martin</option></optgroup><optgroup label="Dynastie Schulz"><option value="42" style="margin-left:15px">Stanislav Schulz</option></optgroup><optgroup label="Dynastie Farmer"><option value="55" style="margin-left:15px">Hotte Farmer</option></optgroup><optgroup label="Dynastie Hermes"><option value="64" style="margin-left:15px">Hans Hermes</option></optgroup><optgroup label="Dynastie Hearts"><option value="76" style="margin-left:15px">Xaldin Hearts</option></optgroup><optgroup label="Dynastie Punkt"><option value="85" style="margin-left:15px">Pünktchen Punkt</option><option value="86" style="margin-left:15px">Otto Punkt</option><option value="87" style="margin-left:15px">Thoma Punkt</option></optgroup><optgroup label="Dynastie Dräger"><option value="112" style="margin-left:15px">Daniel Dräger</option><option value="113" style="margin-left:15px">Annelise Dräger</option></optgroup><optgroup label="Dynastie Reichardt"><option value="115" style="margin-left:15px">Martin Reichardt</option><option value="116" style="margin-left:15px">Trete Reichardt</option></optgroup><optgroup label="Dynastie Fraser"><option value="154" style="margin-left:15px">Claire Fraser</option><option value="155" style="margin-left:15px">Wolfgang Fraser</option><option value="156" style="margin-left:15px">Fergus Fraser</option></optgroup><optgroup label="Dynastie von Thierstein"><option value="157" style="margin-left:15px">Giu von Thierstein</option><option value="158" style="margin-left:15px">Regina von Thierstein</option></optgroup><optgroup label="Dynastie Mozart"><option value="166" style="margin-left:15px">Sophia Mozart</option><option value="167" style="margin-left:15px">Melvin Mozart</option></optgroup><optgroup label="Dynastie Boy"><option value="169" style="margin-left:15px">Schwaben Boy</option><option value="170" style="margin-left:15px">Gertrude Boy</option><option value="171" style="margin-left:15px">Waldemar Boy</option></optgroup><optgroup label="Dynastie Eisenschild"><option value="199" style="margin-left:15px">Keltor Eisenschild</option><option value="200" style="margin-left:15px">Lena Eisenschild</option><option value="201" style="margin-left:15px">Tuva Eisenschild</option></optgroup><optgroup label="Dynastie Fischer"><option value="211" style="margin-left:15px">Wolfgang Fischer</option><option value="212" style="margin-left:15px">Gesine Fischer</option></optgroup><optgroup label="Dynastie Dahl"><option value="244" style="margin-left:15px">Adam Dahl</option></optgroup><optgroup label="Dynastie Bibi"><option value="250" style="margin-left:15px">Paulina Bibi</option><option value="251" style="margin-left:15px">Jann Bibi</option></optgroup><optgroup label="Dynastie McKenzie"><option value="262" style="margin-left:15px">Ellen McKenzie</option><option value="263" style="margin-left:15px">Gebhard McKenzie</option></optgroup><optgroup label="Dynastie  Darcy"><option value="286" style="margin-left:15px">Fitzwilliam  Darcy</option><option value="287" style="margin-left:15px">Ewa  Darcy</option></optgroup><optgroup label="Dynastie Müllerchen"><option value="298" style="margin-left:15px">Don Müllerchen</option><option value="299" style="margin-left:15px">Lina Müllerchen</option><option value="300" style="margin-left:15px">Nico Müllerchen</option></optgroup><optgroup label="Dynastie Pupkes"><option value="301" style="margin-left:15px">Sandra Pupkes</option><option value="302" style="margin-left:15px">Edelhardt Pupkes</option></optgroup><optgroup label="Dynastie Banause"><option value="304" style="margin-left:15px">Bernhardt Banause</option><option value="305" style="margin-left:15px">Veronika Banause</option></optgroup><optgroup label="Dynastie Richter"><option value="313" style="margin-left:15px">Karl Richter</option><option value="314" style="margin-left:15px">Ewa Richter</option></optgroup><optgroup label="Dynastie Antares"><option value="325" style="margin-left:15px">Rune Antares</option></optgroup><optgroup label="Dynastie von Reichsmueller"><option value="343" style="margin-left:15px">Maximilian von Reichsmueller</option><option value="344" style="margin-left:15px">Paula von Reichsmueller</option></optgroup><optgroup label="Dynastie Bert"><option value="346" style="margin-left:15px">Casi Bert</option><option value="347" style="margin-left:15px">Maria Bert</option></optgroup><optgroup label="Dynastie Wallace"><option value="373" style="margin-left:15px">Sorla Wallace</option></optgroup><optgroup label="Dynastie Enterpise"><option value="427" style="margin-left:15px">Ronny Enterpise</option></optgroup><optgroup label="Dynastie Derenberger"><option value="430" style="margin-left:15px">Wilma Derenberger</option><option value="431" style="margin-left:15px">Georg Derenberger</option></optgroup><optgroup label="Dynastie Dergrenz"><option value="457" style="margin-left:15px">Giaccomo Dergrenz</option></optgroup><optgroup label="Dynastie Feuerhaut"><option value="469" style="margin-left:15px">William Feuerhaut</option></optgroup><optgroup label="Dynastie Bruckner"><option value="472" style="margin-left:15px">Jakub Bruckner</option></optgroup><optgroup label="Dynastie Schünemann"><option value="478" style="margin-left:15px">Heinrich Schünemann</option><option value="479" style="margin-left:15px">Tanja Schünemann</option></optgroup><optgroup label="Dynastie Röger"><option value="484" style="margin-left:15px">Stronghold Röger</option></optgroup><optgroup label="Dynastie Bauer"><option value="490" style="margin-left:15px">Sophia Bauer</option><option value="491" style="margin-left:15px">Craft Bauer</option></optgroup><optgroup label="Dynastie Sizso"><option value="493" style="margin-left:15px">Zsolt Sizso</option></optgroup><optgroup label="Dynastie Przyklenk"><option value="496" style="margin-left:15px">Steve Przyklenk</option><option value="497" style="margin-left:15px">Sarah Przyklenk</option></optgroup><optgroup label="Dynastie Reus"><option value="517" style="margin-left:15px">Marco Reus</option></optgroup><optgroup label="Dynastie Lange"><option value="520" style="margin-left:15px">Rupert Lange</option><option value="521" style="margin-left:15px">Tanja Lange</option></optgroup><optgroup label="Dynastie Müller"><option value="535" style="margin-left:15px">Hans Müller</option></optgroup><optgroup label="Dynastie Herbertsen"><option value="538" style="margin-left:15px">Herbert Herbertsen</option><option value="539" style="margin-left:15px">Fjolla Herbertsen</option></optgroup><optgroup label="Dynastie Rosner"><option value="553" style="margin-left:15px">Christian Rosner</option></optgroup><optgroup label="Dynastie Betrugovic"><option value="589" style="margin-left:15px">Slatko Betrugovic</option></optgroup><optgroup label="Dynastie vom Beerberg"><option value="598" style="margin-left:15px">Simplicius vom Beerberg</option><option value="599" style="margin-left:15px">Regina vom Beerberg</option></optgroup><optgroup label="Dynastie Rocky"><option value="622" style="margin-left:15px">Andy Rocky</option></optgroup><optgroup label="Dynastie geppert"><option value="625" style="margin-left:15px">jan geppert</option></optgroup><optgroup label="Dynastie Heyerdahl"><option value="637" style="margin-left:15px">Laila Heyerdahl</option><option value="638" style="margin-left:15px">Melvin Heyerdahl</option></optgroup><optgroup label="Dynastie Fastermann"><option value="661" style="margin-left:15px">Jörg Fastermann</option></optgroup><optgroup label="Dynastie Zico God"><option value="667" style="margin-left:15px">Sir Zico God</option></optgroup><optgroup label="Dynastie Svenson"><option value="673" style="margin-left:15px">Hubert Svenson</option></optgroup><optgroup label="Dynastie Schlereth"><option value="703" style="margin-left:15px">Maximilian Schlereth</option></optgroup><optgroup label="Dynastie Fensterle"><option value="706" style="margin-left:15px">Natalia Fensterle</option></optgroup><optgroup label="Dynastie Word"><option value="709" style="margin-left:15px">Terex Word</option></optgroup><optgroup label="Dynastie Mayr"><option value="721" style="margin-left:15px">Rodewalt Mayr</option></optgroup><optgroup label="Dynastie Bauer"><option value="727" style="margin-left:15px">Jack Bauer</option></optgroup><optgroup label="Dynastie Tenno"><option value="736" style="margin-left:15px">Yamada Tenno</option></optgroup><optgroup label="Dynastie Unger"><option value="847" style="margin-left:15px">Angela Unger</option></optgroup><optgroup label="Dynastie Dderidex"><option value="889" style="margin-left:15px">Negvar Dderidex</option></optgroup><optgroup label="Dynastie Michl"><option value="919" style="margin-left:15px">Ade Michl</option></optgroup><optgroup label="Dynastie Belmont"><option value="922" style="margin-left:15px">Melody Belmont</option></optgroup><optgroup label="Dynastie Pel"><option value="961" style="margin-left:15px">Sep Pel</option></optgroup><optgroup label="Dynastie Reifwasser"><option value="973" style="margin-left:15px">Matilda Reifwasser</option></optgroup><optgroup label="Dynastie Kristerson"><option value="1003" style="margin-left:15px">Martin Kristerson</option></optgroup><optgroup label="Dynastie Betzold"><option value="1009" style="margin-left:15px">Celine Betzold</option></optgroup><optgroup label="Dynastie Gustav"><option value="1015" style="margin-left:15px">Karl Gustav</option></optgroup><optgroup label="Dynastie Haakonson"><option value="1027" style="margin-left:15px">Jakub Haakonson</option></optgroup><optgroup label="Dynastie Ehrmanntraut"><option value="1039" style="margin-left:15px">Zeljko Ehrmanntraut</option></optgroup><optgroup label="Dynastie Arvidson"><option value="1042" style="margin-left:15px">Michal Arvidson</option></optgroup><optgroup label="Dynastie Fischer"><option value="1048" style="margin-left:15px">Armin Fischer</option></optgroup><optgroup label="Dynastie Espenlaub"><option value="1063" style="margin-left:15px">Luithbert Espenlaub</option></optgroup><optgroup label="Dynastie Edvinson"><option value="1072" style="margin-left:15px">Adam Edvinson</option></optgroup><optgroup label="Dynastie Gunvaldson"><option value="1105" style="margin-left:15px">Robert Gunvaldson</option></optgroup><optgroup label="Dynastie Jorgensen"><option value="1114" style="margin-left:15px">Jonas Jorgensen</option></optgroup><optgroup label="Dynastie Frischknecht"><option value="1123" style="margin-left:15px">Tom Frischknecht</option></optgroup><optgroup label="Dynastie Lauber"><option value="1129" style="margin-left:15px">To Lauber</option></optgroup><optgroup label="Dynastie Pazifica"><option value="1138" style="margin-left:15px">Arielle Pazifica</option></optgroup></select><br>
-            <button id="epabziehen">5.000 EP abziehen</button>
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    $("#epitems").click(function () {
-
-                        var link = "http://www.diegilde2-browsergame.de/scripts/buyDealerItem.php?&item=1033&target=" + document.getElementById("spyopfer").value;
-                        $("#response").html('<object data=' + link + ' />');
-                        $("#responselink").text(link);
-                    });
-                });
-            </script>
+            </div>
         </div>
-    </div>
 
-    <div class="col-9">
-        <div class="container">
-            <h2>Anzeige aus dem Spiel</h2>
+        <div class="col-xs-9">
+            <div class="container-custom">
+                <h2>Anzeige aus dem Spiel</h2>
 
-            <div id='responselink'></div>
-            <div id='response'></div>
-            <div id='action'></div>
+                <div id='responselink'></div>
+                <div id='response'></div>
+                <div id='action'></div>
+            </div>
         </div>
     </div>
 </div>
