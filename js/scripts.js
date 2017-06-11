@@ -142,6 +142,20 @@ function showMakeevocation() {
     $("#action").html('');
 }
 
+function showSendHooker() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=SendHooker";
+    $("#responselink").html('Dirnen entsenden');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
+function showSendBeggar() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=SendBeggar";
+    $("#responselink").html('Bettler entsenden');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
 function showForgivesins() {
     var link = "http://www.diegilde2-browsergame.de/measure.php?ms=forgivesins";
     $("#responselink").html('Sünden vergeben');
