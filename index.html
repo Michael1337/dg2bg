@@ -61,6 +61,8 @@
                              onclick="showBlemishchair()"/>
                         <img src="./images/plunderguild.png" title="Plunderguild" role="button"
                              onclick="showPlunderguild()"/>
+                        <img src="./images/fest.png" title="Celebration" role="button"
+                             onclick="showCelebration()"/>
                         <img src="./images/havevision.png" title="Havevision" role="button" onclick="showHavevision()"/>
                         <img src="./images/makeevocation.png" title="Makeevocation" role="button"
                              onclick="showMakeevocation()"/>
@@ -72,10 +74,15 @@
                              onclick="showForgivesins()"/>
                         <img src="./images/INSPECTBUSINESS.png" title="Inspectbusiness" role="button"
                              onclick="showInspectbusiness()"/>
+                        <img src="./images/hideoffice.png" title="Hidefromoffice" role="button"
+                             onclick="showHidefromoffice()"/>
                         <img src="./images/SEVERITYOFLAW.png" title="Severityoflaw" role="button"
                              onclick="showSeverityoflaw()"/>
                         <img src="./images/settax.png" title="SetGuildtax" role="button" onclick="showSetGuildtax()"/>
                         <img src="./images/newlaw.png" title="NewLawKIDNAP" role="button" onclick="showNewLawKIDNAP()"/>
+                        <img src="./images/newlaw.png" title="NewLawDRINKS" role="button" onclick="showNewLawDRINKS()"/>
+                        <img src="./images/newlaw.png" title="NewLawFRAUD" role="button" onclick="showNewLawFRAUD()"/>
+                        <img src="./images/newlaw.png" title="NewLawMAGIE" role="button" onclick="showNewLawMAGIE()"/>
                         <img src="./images/hijack.png" title="msHijack" role="button" onclick="showMsHijack()"/>
                         <img src="./images/observe.png" title="Observe" role="button" onclick="showObserve()"/>
                         <img src="./images/observe.png" title="Observe100" role="button" onclick="showObserve100()"/>
@@ -135,6 +142,54 @@
                     </div>
                     <div class="btn-group input-group-btn" role="group">
                         <button id="epabziehen" type="button" class="btn btn-primary">5.000 EP abziehen</button>
+                    </div>
+                </div>
+
+                <div class="btn-group-justified margin-bottom input-group" role="group" aria-label="Aus dem Amt werfen!">
+                    <div class="btn-group" role="group">
+                        <select name="number" id="hideoffice" class="form-control">
+                            <option value="0">Opfer</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                        </select>
+                    </div>
+                    <div class="btn-group input-group-btn" role="group">
+                        <button id="hideofficebtn" type="button" class="btn btn-primary" disabled="disabled">Aus dem Amt werfen!</button>
+                    </div>
+                </div>
+
+                <div class="btn-group-justified margin-bottom input-group" role="group" aria-label="Gesetz ändern!">
+                    <div class="btn-group" role="group">
+                        <select name="number" id="setlaw" class="form-control">
+                            <option value="0">Gesetz</option>
+                            <option value="KIDNAP">Entführung</option>
+                            <option value="FRAUD">Betrügerei</option>
+                            <option value="DRINKS">Tränke & Brodem</option>
+                            <option value="MAGIE">Benutzen von Magie</option>
+                        </select>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <select name="number" id="setlaw2" class="form-control">
+                            <option value="0">nicht strafbar</option>
+                            <option value="1">strafbar</option>
+                        </select>
+                    </div>
+                    <div class="btn-group input-group-btn" role="group">
+                        <button id="setlawbtn" type="button" class="btn btn-primary">Gesetz ändern!</button>
                     </div>
                 </div>
 

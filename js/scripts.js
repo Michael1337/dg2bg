@@ -128,6 +128,13 @@ function showPlunderguild() {
     $("#action").html('');
 }
 
+function showCelebration() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=Celebration";
+    $("#responselink").html('Ein Fest geben');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
 function showHavevision() {
     var link = "http://www.diegilde2-browsergame.de/measure.php?ms=havevision";
     $("#responselink").html('Vision erhalten');
@@ -170,6 +177,13 @@ function showInspectbusiness() {
     $("#action").html('');
 }
 
+function showHidefromoffice() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=Hidefromoffice";
+    $("#responselink").html('Jemanden aus dem Amt werfen');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
 function showSeverityoflaw() {
     var link = "http://www.diegilde2-browsergame.de/measure.php?ms=severityoflaw";
     $("#responselink").html('Härte des Gesetzes');
@@ -186,8 +200,28 @@ function showSetGuildtax() {
 
 function showNewLawKIDNAP() {
     var link = "http://www.diegilde2-browsergame.de/scripts/msSetLaw.php?law=KIDNAP";
-    //FRAUD
     $("#responselink").html('Gesetz - Entführung- ändern');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
+function showNewLawDRINKS() {
+    var link = "http://www.diegilde2-browsergame.de/scripts/msSetLaw.php?law=DRINKS";
+    $("#responselink").html('Gesetz -Tränke & Brodem- ändern.');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
+function showNewLawFRAUD() {
+    var link = "http://www.diegilde2-browsergame.de/scripts/msSetLaw.php?law=FRAUD";
+    $("#responselink").html('Gesetz - Betrügerei - ändern');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
+function showNewLawMAGIE() {
+    var link = "http://www.diegilde2-browsergame.de/scripts/msSetLaw.php?law=MAGIE";
+    $("#responselink").html('Gesetz - Benutzen von Magie - ändern');
     $("#response").html('<object data=' + link + ' />');
     $("#action").html('');
 }
@@ -349,6 +383,24 @@ $(document).ready(function () {
     $("#epabziehen").click(function () {
 
         var link = "http://www.diegilde2-browsergame.de/scripts/buyDealerItem.php?&item=1033&target=" + document.getElementById("spyopfer").value;
+        $("#response").html('<object data=' + link + ' />');
+        $("#responselink").text(link);
+    });
+});
+
+$(document).ready(function () {
+    $("#hideofficebtn").click(function () {
+
+        var link = "http://www.diegilde2-browsergame.de/scripts/doHidefromoffice.php?target=" + document.getElementById("hideoffice").value;
+        $("#response").html('<object data=' + link + ' />');
+        $("#responselink").text(link);
+    });
+});
+
+$(document).ready(function () {
+    $("#setlawbtn").click(function () {
+
+        var link = "http://www.diegilde2-browsergame.de/scripts/doSetLaw.php?law=" + document.getElementById("setlaw").value + "&sl=" + document.getElementById("setlaw2").value;
         $("#response").html('<object data=' + link + ' />');
         $("#responselink").text(link);
     });
