@@ -15,6 +15,20 @@ function showPrey() {
     $("#action").html('');
 }
 
+function showWorshipPraise() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=WorshipPraise";
+    $("#responselink").html('');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
+function showWorshipScold() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=WorshipScold";
+    $("#responselink").html('');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
 function showTrain() {
     var link = "http://www.diegilde2-browsergame.de/measure.php?ms=Train";
     $("#responselink").html('');
