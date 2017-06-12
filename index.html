@@ -19,78 +19,157 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-4">
+        <div class="col-xs-6">
             <div class="container-custom">
-
-                <a href="http://www.diegilde2-browsergame.de/building.php?m=2&bp=bp1">Gebäude reparieren?</a><br/>
+                <!--<a href="http://www.diegilde2-browsergame.de/building.php?m=2&bp=bp1">Gebäude reparieren?</a><br/>
                 <a href="http://www.diegilde2-browsergame.de/measure.php?ms=Jugde&points=770">Richter bestechen (zu
                     testen)</a><br/>
-                <!--
+
                 http://www.diegilde2-browsergame.de/scripts/doJugdement.php?ms=bestechen
                 http://www.diegilde2-browsergame.de/measure.php?ms=Jugde&points=202
                 http://www.diegilde2-browsergame.de/scripts/msJugde.php?points=402
-                -->
+
 
                 <a href="#" onclick="test()">Questannahme 2</a><br>
-
-                Kann man spammen:
+                -->
+                Schnellauswahl:
                 <div class="row margin-bottom">
                     <div class="col-xs-12">
-                        <img src="./images/winbeliver.png" title="Winbeliever" role="button"
+                        <img src="./images/winbeliver.png" title="Gläubige gewinnen" role="button"
                              onclick="showWinBeliver()"/>
-                        <img src="./images/train.png" title="Train" role="button" onclick="showTrain()"/>
+                        <img src="./images/train.png" title="Gruppenmitglied trainieren" role="button"
+                             onclick="showTrain()"/>
                         <img src="./images/warenschmuggel.png" title="Warenschmuggel" role="button"
                              onclick="showSchmuggel()"/>
-                        <img src="./images/OrderCollectEvidence.png" title="OrderCollecEvidence" role="button"
+                        <img src="./images/OrderCollectEvidence.png" title="Sich umhören" role="button"
                              onclick="showOrderCollectEvidence()"/>
-                        <img src="./images/takeabath.png" title="Takeabath" role="button" onclick="showZuber()"/>
+                        <img src="./images/takeabath.png" title="In den Zuber steigen" role="button"
+                             onclick="showZuber()"/>
                         <img src="./images/playagame.png" title="Playagame" role="button" onclick="showDicegame()"/>
-                        <img src="./images/prey.png" title="Prey" role="button" onclick="showPrey()"/>
+                        <img src="./images/prey.png" title="Predigt abhalten" role="button" onclick="showPrey()"/>
                     </div>
                 </div>
 
-                Uninteressant oder illegal:
+                Haus:
                 <div class="row margin-bottom">
                     <div class="col-xs-12">
-                        <img src="./images/ChangeFaith.png" title="ChangeFaith" role="button"
-                             onclick="showChangeFaith()"/>
-                        <img src="./images/Spy.png" title="Spy" role="button" onclick="showSpy()"/>
-                        <img src="./images/Quacksalver.png" title="Quacksalver" role="button" onclick="showQuack()"/>
-                        <img src="./images/brainwash.png" title="Brainwash" role="button" onclick="showBrainwash()"/>
-                        <img src="./images/blemishchair.png" title="Blemishchair" role="button"
-                             onclick="showBlemishchair()"/>
-                        <img src="./images/plunderguild.png" title="Plunderguild" role="button"
+                        <img src="./images/train.png" title="Gruppenmitglied trainieren" role="button"
+                             onclick="showTrain()"/>
+                        <img src="./images/warenschmuggel.png" title="Warenschmuggel" role="button"
+                             onclick="showSchmuggel()"/>
+                        <img src="./images/OrderCollectEvidence.png" title="Sich umhören" role="button"
+                             onclick="showOrderCollectEvidence()"/>
+                        <img src="./images/Spy.png" title="Jemanden ausspionieren..." role="button"
+                             onclick="showSpy()"/>
+                        <img src="./images/brainwash.png" title="Jemanden eine Gehirnwäsche verpassen..." role="button"
+                             onclick="showBrainwash()"/>
+                        <img src="./images/plunderguild.png" title="Gelder der Gilde veruntreuen" role="button"
                              onclick="showPlunderguild()"/>
-                        <img src="./images/fest.png" title="Celebration" role="button"
+                        <img src="./images/fest.png" title="Ein Fest geben" role="button"
                              onclick="showCelebration()"/>
-                        <img src="./images/havevision.png" title="Havevision" role="button" onclick="showHavevision()"/>
-                        <img src="./images/makeevocation.png" title="Makeevocation" role="button"
-                             onclick="showMakeevocation()"/>
-                        <img src="./images/hooker.png" title="SendHooker" role="button"
-                             onclick="showSendHooker()"/>
-                        <img src="./images/beggar.png" title="SendBeggar" role="button"
-                             onclick="showSendBeggar()"/>
-                        <img src="./images/forgivesins.png" title="Forgivesins" role="button"
+                    </div>
+                </div>
+
+                Taverne / Rathaus:
+                <div class="row margin-bottom">
+                    <div class="col-xs-12">
+                        <img src="./images/takeabath.png" title="In den Zuber steigen" role="button"
+                             onclick="showZuber()"/>
+                        <img src="./images/playagame.png" title="Playagame" role="button" onclick="showDicegame()"/>
+                        <img src="./images/forgivesins.png" title="Sünden vergeben" role="button"
                              onclick="showForgivesins()"/>
-                        <img src="./images/INSPECTBUSINESS.png" title="Inspectbusiness" role="button"
+                        <img src="./images/INSPECTBUSINESS.png" title="Einen Betrieb inspizieren" role="button"
                              onclick="showInspectbusiness()"/>
-                        <img src="./images/hideoffice.png" title="Hidefromoffice" role="button"
+                        <img src="./images/hideoffice.png" title="Jemanden aus dem Amt werfen" role="button"
                              onclick="showHidefromoffice()"/>
-                        <img src="./images/SEVERITYOFLAW.png" title="Severityoflaw" role="button"
+                        <img src="./images/SEVERITYOFLAW.png" title="Härte des Gesetzes" role="button"
                              onclick="showSeverityoflaw()"/>
-                        <img src="./images/settax.png" title="SetGuildtax" role="button" onclick="showSetGuildtax()"/>
-                        <img src="./images/newlaw.png" title="NewLawKIDNAP" role="button" onclick="showNewLawKIDNAP()"/>
-                        <img src="./images/newlaw.png" title="NewLawDRINKS" role="button" onclick="showNewLawDRINKS()"/>
-                        <img src="./images/newlaw.png" title="NewLawFRAUD" role="button" onclick="showNewLawFRAUD()"/>
-                        <img src="./images/newlaw.png" title="NewLawMAGIE" role="button" onclick="showNewLawMAGIE()"/>
-                        <img src="./images/hijack.png" title="msHijack" role="button" onclick="showMsHijack()"/>
-                        <img src="./images/observe.png" title="Observe" role="button" onclick="showObserve()"/>
-                        <img src="./images/observe.png" title="Observe100" role="button" onclick="showObserve100()"/>
-                        <img src="./images/aufschlag.png" title="Aufschlag" role="button" onclick="showAufschlag()"/>
-                        <img src="./images/gastbestehlen.png" title="Gastbestehlen" role="button"
+                        <img src="./images/settax.png" title="Gildensteuer ändern" role="button"
+                             onclick="showSetGuildtax()"/>
+                        <img src="./images/newlaw.png" title="Gesetz -Entführung- ändern" role="button"
+                             onclick="showNewLawKIDNAP()"/>
+                        <img src="./images/newlaw.png" title="Gesetz -Tränke & Brodem- ändern" role="button"
+                             onclick="showNewLawDRINKS()"/>
+                        <img src="./images/newlaw.png" title="Gesetz -Betrügerei- ändern" role="button"
+                             onclick="showNewLawFRAUD()"/>
+                        <img src="./images/newlaw.png" title="Gesetz -Benutzen von Magie- ändern" role="button"
+                             onclick="showNewLawMAGIE()"/>
+                    </div>
+                </div>
+
+                Betriebe:
+                <div class="row margin-bottom">
+                    <div class="col-xs-12">
+                        <img src="./images/winbeliver.png" title="Gläubige gewinnen" role="button"
+                             onclick="showWinBeliver()"/>
+                        <img src="./images/prey.png" title="Predigt abhalten" role="button" onclick="showPrey()"/>
+                        <img src="./images/ChangeFaith.png" title="Glaubenswechsel" role="button"
+                             onclick="showChangeFaith()"/>
+                        <img src="./images/Quacksalver.png" title="Quacksalben" role="button" onclick="showQuack()"/>
+                        <img src="./images/havevision.png" title="Vision erhalten" role="button"
+                             onclick="showHavevision()"/>
+                        <img src="./images/makeevocation.png" title="Ein Gebäude verfluchen" role="button"
+                             onclick="showMakeevocation()"/>
+                        <img src="./images/hooker.png" title="Dirnen entsenden" role="button"
+                             onclick="showSendHooker()"/>
+                        <img src="./images/beggar.png" title="Bettler entsenden" role="button"
+                             onclick="showSendBeggar()"/>
+                        <img src="./images/blemishchair.png" title="Jemanden auf den Schandstuhl setzen" role="button"
+                             onclick="showBlemishchair()"/>
+                        <img src="./images/aufschlag.png" title="10% Aufschlag" role="button"
+                             onclick="showAufschlag()"/>
+                        <img src="./images/gastbestehlen.png" title="Gast bestehlen" role="button"
                              onclick="showGastbestehlen()"/>
-                        <img src="./images/break.png" title="PickPocket" role="button"
+                        <img src="./images/hijack.png" title="Zellenplan" role="button" onclick="showMsHijack()"/>
+                        <img src="./images/observe.png" title="Entführungsopfer finden" role="button"
+                             onclick="showObserve()"/>
+                        <img src="./images/observe.png" title="Entführungsopfer finden (100%)" role="button"
+                             onclick="showObserve100()"/>
+                        <img src="./images/break.png" title="Taschendiebstahl" role="button"
                              onclick="showPickPocket()"/>
+                    </div>
+                </div>
+
+                Legal:
+                <div class="btn-group-justified" role="group">
+                    <div class="btn-group" role="group">
+                        <select multiple class="form-control" id="itemsToBuy" size="3">
+                            <option value="23">Kuchen</option>
+                            <option value="27">Praline</option>
+                            <option value="45">Met</option>
+                            <option value="48">Geisternebel</option>
+                            <option value="67">Gürtel der Methaphysik</option>
+                            <option value="82">Gehstock</option>
+                            <option value="101">Geldbeutel</option>
+                            <option value="106">Duellhandschuhe</option>
+                            <option value="126">Parfum</option>
+                            <option value="127">Dartagnans Duft</option>
+                            <option value="129">Elixir des Dr. Faustus</option>
+                            <option value="132">Blumen der Zwietracht</option>
+                            <option value="133">Unkendung</option>
+                            <option value="135">Krötenschleim</option>
+                            <option value="167">Brief aus Rom</option>
+                            <option value="168">Thesenpapier</option>
+                            <option value="390">Nekromantenrobe</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="btn-group-justified margin-bottom input-group" role="group">
+                    <div class="btn-group" role="group">
+                        <select name="item2" id="itemsToBuy2" class="form-control">
+                            <option value="MAIN">Main</option>
+                            <option value="COURT">Court</option>
+                            <option value="CHILD">Child</option>
+                        </select>
+                    </div>
+                    <div class="btn-group input-group-btn" role="group">
+                        <button id='epitems' type="button" class="btn btn-primary">Items kaufen</button>
+                    </div>
+                </div>
+
+                <div class="btn-group-justified input-group margin-bottom" role="group">
+                    <div class="btn-group input-group-btn" role="group">
+                        <button id='faustusbtn' type="button" class="btn btn-primary">Faustus anwenden</button>
                     </div>
                 </div>
 
@@ -110,7 +189,7 @@
                     </div>
                 </div>
 
-                <div class="btn-group btn-group-justified margin-bottom" role="group" aria-label="Quests">
+                <div class="btn-group btn-group-justified margin-bottom" role="group">
                     <div class="btn-group" role="group">
                         <button id='quests' type="button" class="btn btn-primary">Quests annehmen</button>
                     </div>
@@ -119,81 +198,8 @@
                     </div>
                 </div>
 
-                <div class="btn-group-justified margin-bottom input-group" role="group" aria-label="EP abziehen">
-                    <div class="btn-group" role="group">
-                        <select name="number" id="spyopfer" class="form-control">
-                            <option value="0">Opfer</option>
-                            <optgroup label="Dynastie Fraser">
-                                <option value="154" style="margin-left:15px">Claire Fraser</option>
-                                <option value="155" style="margin-left:15px">Wolfgang Fraser</option>
-                                <option value="156" style="margin-left:15px">Fergus Fraser</option>
-                            </optgroup>
-                            <optgroup label="Dynastie Boy">
-                                <option value="169" style="margin-left:15px">Schwaben Boy</option>
-                                <option value="170" style="margin-left:15px">Gertrude Boy</option>
-                                <option value="171" style="margin-left:15px">Waldemar Boy</option>
-                            </optgroup>
-                            <optgroup label="Dynastie Müllerchen">
-                                <option value="298" style="margin-left:15px">Don Müllerchen</option>
-                                <option value="299" style="margin-left:15px">Lina Müllerchen</option>
-                                <option value="300" style="margin-left:15px">Nico Müllerchen</option>
-                            </optgroup>
-                        </select>
-                    </div>
-                    <div class="btn-group input-group-btn" role="group">
-                        <button id="epabziehen" type="button" class="btn btn-primary">5.000 EP abziehen</button>
-                    </div>
-                </div>
-
-                <div class="btn-group-justified margin-bottom input-group" role="group" aria-label="Aus dem Amt werfen!">
-                    <div class="btn-group" role="group">
-                        <select name="number" id="hideoffice" class="form-control">
-                            <option value="0">Opfer</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                            <option value="13">13</option>
-                            <option value="14">14</option>
-                            <option value="15">15</option>
-                            <option value="16">16</option>
-                        </select>
-                    </div>
-                    <div class="btn-group input-group-btn" role="group">
-                        <button id="hideofficebtn" type="button" class="btn btn-primary" disabled="disabled">Aus dem Amt werfen!</button>
-                    </div>
-                </div>
-
-                <div class="btn-group-justified margin-bottom input-group" role="group" aria-label="Gesetz ändern!">
-                    <div class="btn-group" role="group">
-                        <select name="number" id="setlaw" class="form-control">
-                            <option value="0">Gesetz</option>
-                            <option value="KIDNAP">Entführung</option>
-                            <option value="FRAUD">Betrügerei</option>
-                            <option value="DRINKS">Tränke & Brodem</option>
-                            <option value="MAGIE">Benutzen von Magie</option>
-                        </select>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <select name="number" id="setlaw2" class="form-control">
-                            <option value="0">nicht strafbar</option>
-                            <option value="1">strafbar</option>
-                        </select>
-                    </div>
-                    <div class="btn-group input-group-btn" role="group">
-                        <button id="setlawbtn" type="button" class="btn btn-primary" disabled="disabled">Gesetz ändern!</button>
-                    </div>
-                </div>
-
-                <div class="btn-group-justified" role="group" aria-label="Itemgetter">
+                Nicht legal:
+                <div class="btn-group-justified" role="group">
                     <div class="btn-group" role="group">
                         <select name="item" id="itemcheat" class="form-control">
 
@@ -336,7 +342,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="btn-group-justified margin-bottom input-group" role="group" aria-label="Itemgetter">
+                <div class="btn-group-justified margin-bottom input-group" role="group">
                     <div class="btn-group" role="group">
                         <select name="item" id="itemcheat2" class="form-control">
                             <option value="MAIN">Main</option>
@@ -349,49 +355,7 @@
                     </div>
                 </div>
 
-                <div class="btn-group-justified" role="group" aria-label="Items kaufen">
-                    <div class="btn-group" role="group">
-                        <select multiple class="form-control" id="itemsToBuy" size="7">
-                            <option value="23">Kuchen</option>
-                            <option value="27">Praline</option>
-                            <option value="45">Met</option>
-                            <option value="48">Geisternebel</option>
-                            <option value="67">Gürtel der Methaphysik</option>
-                            <option value="82">Gehstock</option>
-                            <option value="101">Geldbeutel</option>
-                            <option value="106">Duellhandschuhe</option>
-                            <option value="126">Parfum</option>
-                            <option value="127">Dartagnans Duft</option>
-                            <option value="129">Elixir des Dr. Faustus</option>
-                            <option value="132">Blumen der Zwietracht</option>
-                            <option value="133">Unkendung</option>
-                            <option value="135">Krötenschleim</option>
-                            <option value="167">Brief aus Rom</option>
-                            <option value="168">Thesenpapier</option>
-                            <option value="390">Nekromantenrobe</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="btn-group-justified margin-bottom input-group" role="group" aria-label="Itemskaufen">
-                    <div class="btn-group" role="group">
-                        <select name="item2" id="itemsToBuy2" class="form-control">
-                            <option value="MAIN">Main</option>
-                            <option value="COURT">Court</option>
-                            <option value="CHILD">Child</option>
-                        </select>
-                    </div>
-                    <div class="btn-group input-group-btn" role="group">
-                        <button id='epitems' type="button" class="btn btn-primary">Items kaufen</button>
-                    </div>
-                </div>
-
-                <div class="btn-group-justified input-group margin-bottom" role="group" aria-label="Spiel">
-                    <div class="btn-group input-group-btn" role="group">
-                        <button id='faustusbtn' type="button" class="btn btn-primary">Faustus anwenden</button>
-                    </div>
-                </div>
-
-                <div class="btn-group-justified input-group" role="group" aria-label="Spiel">
+                <div class="btn-group-justified input-group" role="group">
                     <div class="btn-group" role="group">
                         Me:
                     </div>
@@ -411,7 +375,7 @@
                         <input id="gameMe5" name="gameMe5" type="text" value="3" class="form-control"/>
                     </div>
                 </div>
-                <div class="btn-group-justified input-group" role="group" aria-label="Spiel">
+                <div class="btn-group-justified input-group" role="group">
                     <div class="btn-group" role="group">
                         Ai:
                     </div>
@@ -431,7 +395,7 @@
                         <input id="gameAi5" name="gameAi5" type="text" value="5" class="form-control"/>
                     </div>
                 </div>
-                <div class="btn-group-justified input-group" role="group" aria-label="Spiel">
+                <div class="btn-group-justified input-group margin-bottom" role="group">
                     <div class="btn-group" role="group">
                         Gold:
                     </div>
@@ -445,12 +409,88 @@
                         <button id='gameBtn' type="button" class="btn btn-primary">Betrügen</button>
                     </div>
                     <div class="btn-group" role="group">
-                        <input id="gameGold3" name="gameAi1" type="text" value="" disabled="disabled" class="form-control"/>
+                        <input id="gameGold3" name="gameAi1" type="text" value="" disabled="disabled"
+                               class="form-control"/>
                     </div>
                 </div>
+
+
+                <div class="btn-group-justified margin-bottom input-group" role="group">
+                    <div class="btn-group" role="group">
+                        <select name="number" id="spyopfer" class="form-control">
+                            <option value="0">Opfer</option>
+                            <optgroup label="Dynastie Boy">
+                                <option value="169">Schwaben Boy</option>
+                                <option value="170">Gertrude Boy</option>
+                                <option value="171">Waldemar Boy</option>
+                            </optgroup>
+                            <optgroup label="Dynastie Müllerchen">
+                                <option value="298">Don Müllerchen</option>
+                                <option value="299">Lina Müllerchen</option>
+                                <option value="300">Nico Müllerchen</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="btn-group input-group-btn" role="group">
+                        <button id="epabziehen" type="button" class="btn btn-primary">5.000 EP abziehen</button>
+                    </div>
+                </div>
+
+                Zu auffällig:
+                <div class="btn-group-justified margin-bottom input-group" role="group">
+                    <div class="btn-group" role="group">
+                        <select name="number" id="hideoffice" class="form-control">
+                            <option value="0">Opfer</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                        </select>
+                    </div>
+                    <div class="btn-group input-group-btn" role="group">
+                        <button id="hideofficebtn" type="button" class="btn btn-primary" disabled="disabled">Aus dem Amt
+                            werfen!
+                        </button>
+                    </div>
+                </div>
+
+                <div class="btn-group-justified input-group" role="group">
+                    <div class="btn-group" role="group">
+                        <select name="number" id="setlaw" class="form-control">
+                            <option value="0">Gesetz</option>
+                            <option value="KIDNAP">Entführung</option>
+                            <option value="FRAUD">Betrügerei</option>
+                            <option value="DRINKS">Tränke & Brodem</option>
+                            <option value="MAGIE">Benutzen von Magie</option>
+                        </select>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <select name="number" id="setlaw2" class="form-control">
+                            <option value="0">nicht strafbar</option>
+                            <option value="1">strafbar</option>
+                        </select>
+                    </div>
+                    <div class="btn-group input-group-btn" role="group">
+                        <button id="setlawbtn" type="button" class="btn btn-primary" disabled="disabled">Gesetz ändern!
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
-        <div class="col-xs-8">
+        <div class="col-xs-6">
             <div class="container-custom">
                 <h2>Anzeige aus dem Spiel</h2>
 
