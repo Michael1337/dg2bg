@@ -260,3 +260,10 @@ function showNewLawMAGIE() {
     $("#response").html('<object data=' + link + ' />');
     $("#action").html('');
 }
+
+function showNewLawTAXEVASION() {
+    var link = "http://www.diegilde2-browsergame.de/scripts/msSetLaw.php?law=TAXEVASION";
+    $("#responselink").html('');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
