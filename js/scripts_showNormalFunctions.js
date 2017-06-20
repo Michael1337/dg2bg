@@ -177,6 +177,13 @@ function showMakeevocation() {
     $("#action").html('');
 }
 
+function showEssenzdertoten() {
+    var link = "http://www.diegilde2-browsergame.de/measure.php?ms=Essenzdertoten";
+    $("#responselink").html('');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
 function showSendHooker() {
     var link = "http://www.diegilde2-browsergame.de/measure.php?ms=SendHooker";
     $("#responselink").html('');
