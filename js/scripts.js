@@ -37,9 +37,29 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
+    $("#forgivesinsbtn").click(function () {
+        var link = "http://www.diegilde2-browsergame.de/scripts/doForgivesins.php?target=" + document.getElementById("forgivesins").value;
+        $("#response").html('<object data=' + link + ' />');
+        $("#responselink").text(link);
+    });
+});
+
+$(document).ready(function () {
     $("#setlawbtn").click(function () {
         var link = "http://www.diegilde2-browsergame.de/scripts/doSetLaw.php?law=" + document.getElementById("setlaw").value + "&sl=" + document.getElementById("setlaw2").value;
         $("#response").html('<object data=' + link + ' />');
         $("#responselink").text(link);
     });
 });
+
+//es müsste möglich sein, die gildensteuer beliebig hoch zu setzen. (allerdings kenne ich den link leider nicht)
+//die anderen steuern eher nicht
+
+//es sollte möglich sein, einen beliebigen Betrieb inspizieren zu lassen (allerdings kenne ich den link leider nicht)
+
+//es sollte möglich sein, die Härte des Gesetzes anzupassen ...
+
+//es sollte möglich sein, jeden beliebigen char anzuklagen, allerdings ist das ohne beweise nicht nur auffällig, sondern auch nutzlos.
+///scripts/doSueSomebody.php?st="  + "strafe"  + "angeklagter"
+//strafen: GOLD1, GOLD2, KERKER, TITLE1, TITLE2, DEAD
+//angeklagter: &uname=twin&ct=MAIN
