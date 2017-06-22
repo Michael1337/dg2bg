@@ -21,6 +21,14 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
+    $("#plunderbtn").click(function () {
+        var link = "http://www.diegilde2-browsergame.de/scripts/doPlunderGuild.php";
+        $("#response").html('<object data=' + link + ' />');
+        $("#responselink").text(link);
+    });
+});
+
+$(document).ready(function () {
     $("#epabziehen").click(function () {
         var link = "http://www.diegilde2-browsergame.de/scripts/buyDealerItem.php?&item=1033&val=1&target=" + document.getElementById("spyopfer").value;
         $("#response").html('<object data=' + link + ' />');
