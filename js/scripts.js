@@ -45,15 +45,20 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
+    $("#guildtaxbtn").click(function () {
+        var link = "http://www.diegilde2-browsergame.de/scripts/doSetGuildtax.php?tax=" + document.getElementById("guildtax").value;
+        $("#response").html('<object data=' + link + ' />');
+        $("#responselink").text(link);
+    });
+});
+
+$(document).ready(function () {
     $("#setlawbtn").click(function () {
         var link = "http://www.diegilde2-browsergame.de/scripts/doSetLaw.php?law=" + document.getElementById("setlaw").value + "&sl=" + document.getElementById("setlaw2").value;
         $("#response").html('<object data=' + link + ' />');
         $("#responselink").text(link);
     });
 });
-
-//es müsste möglich sein, die gildensteuer beliebig hoch zu setzen. (allerdings kenne ich den link leider nicht)
-//die anderen steuern eher nicht
 
 //es sollte möglich sein, einen beliebigen Betrieb inspizieren zu lassen (allerdings kenne ich den link leider nicht)
 
