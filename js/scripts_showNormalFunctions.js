@@ -240,6 +240,13 @@ function showNewLawKIDNAP() {
     $("#action").html('');
 }
 
+function showNewLawCRIME() {
+    var link = "http://www.diegilde2-browsergame.de/scripts/msSetLaw.php?law=CRIME";
+    $("#responselink").html('');
+    $("#response").html('<object data=' + link + ' />');
+    $("#action").html('');
+}
+
 function showNewLawDRINKS() {
     var link = "http://www.diegilde2-browsergame.de/scripts/msSetLaw.php?law=DRINKS";
     $("#responselink").html('');

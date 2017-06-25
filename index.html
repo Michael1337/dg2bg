@@ -96,7 +96,8 @@
                             <img src="./images/playagame.png" title="Playagame" role="button" onclick="showDicegame()"/>
                             <img src="./images/takeabath.png" title="In den Zuber steigen" role="button"
                                  onclick="showZuber()"/>
-                            <img src="./images/SEVERITYOFLAW.png" title="Härte des Gesetzes" role="button"
+                            <img src="./images/SEVERITYOFLAW.png" title="Härte der Rechtsprechung festlegen"
+                                 role="button"
                                  onclick="showSeverityoflaw()"/>
                             <img src="./images/newlaw.png" title="Gesetz -Betrügerei- ändern" role="button"
                                  onclick="showNewLawFRAUD()"/>
@@ -108,6 +109,8 @@
                                  onclick="showNewLawTAXEVASION()"/>
                             <img src="./images/newlaw.png" title="Gesetz -Entführung- ändern" role="button"
                                  onclick="showNewLawKIDNAP()"/>
+                            <img src="./images/newlaw.png" title="Gesetz -Manipulation- ändern" role="button"
+                                 onclick="showNewLawCRIME()"/>
                             <img src="./images/forgivesins.png" title="Sünden vergeben" role="button"
                                  onclick="showForgivesins()"/>
                             <img src="./images/INSPECTBUSINESS.png" title="Einen Betrieb inspizieren" role="button"
@@ -420,7 +423,8 @@
                     Gelder der Gilde veruntreuen:
                     <div class="btn-group-justified input-group margin-bottom" role="group">
                         <div class="btn-group input-group-btn" role="group">
-                            <button id='plunderbtn' type="button" class="btn btn-primary">Gelder der Gilde veruntreuen</button>
+                            <button id='plunderbtn' type="button" class="btn btn-primary">Gelder der Gilde veruntreuen
+                            </button>
                         </div>
                     </div>
 
@@ -625,6 +629,24 @@
                         </div>
                     </div>
 
+                    Härte der Rechtsprechung festlegen:
+                    <div class="btn-group-justified margin-bottom input-group" role="group">
+                        <div class="btn-group" role="group">
+                            <select name="number" id="severityoflaw" class="form-control">
+                                <option value="0">Welche Härte der Rechtsprechung soll gelten?</option>
+                                <option value="1">Milde</option>
+                                <option value="2">Normal</option>
+                                <option value="3">Hart</option>
+                                <option value="4">Sehr hart</option>
+                            </select>
+                        </div>
+                        <div class="btn-group input-group-btn" role="group">
+                            <button id="severityoflawbtn" type="button" class="btn btn-primary" disabled="disabled">
+                                Gildensteuer ändern!
+                            </button>
+                        </div>
+                    </div>
+
                     Ein Gesetz ändern:
                     <div class="btn-group-justified input-group margin-bottom" role="group">
                         <div class="btn-group" role="group">
@@ -635,6 +657,7 @@
                                 <option value="MAGIE">Benutzen von Magie</option>
                                 <option value="TAXEVASION">Steuerbetrug</option>
                                 <option value="KIDNAP">Entführung</option>
+                                <option value="CRIME">Manipulation</option>
                             </select>
                         </div>
                         <div class="btn-group" role="group">

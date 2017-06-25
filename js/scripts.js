@@ -69,6 +69,14 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
+    $("#severityoflawbtn").click(function () {
+        var link = "http://www.diegilde2-browsergame.de/scripts/doSeverityoflaw.php?value=" + document.getElementById("severityoflaw").value;
+        $("#response").html('<object data=' + link + ' />');
+        $("#responselink").text(link);
+    });
+});
+
+$(document).ready(function () {
     $("#setlawbtn").click(function () {
         var link = "http://www.diegilde2-browsergame.de/scripts/doSetLaw.php?law=" + document.getElementById("setlaw").value + "&sl=" + document.getElementById("setlaw2").value;
         $("#response").html('<object data=' + link + ' />');
