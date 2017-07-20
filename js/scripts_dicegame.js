@@ -6,7 +6,8 @@ $(document).ready(function () {
         var gold1 = parseInt($("#gameGold").val());
         var gold2 = parseInt($("#gameGold2").val());
         var gold3 = (gold1+gold2*5)*2;
-        $("#gameGold3").val(gold3);
+        var gold3txt = gold3/10000;
+        $("#gameGold3").val(gold3txt);
     }
     $("#gameGold").change(function () {
         updateGold();
